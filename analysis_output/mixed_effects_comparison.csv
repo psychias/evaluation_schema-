@@ -1,0 +1,5 @@
+benchmark,n,n_models,ols_r2,ols_aic,me_aic,re_var,me_converged
+GSM8K,23,10,0.597,-57.5,,0.001739,True
+HellaSwag,14,9,0.972,-139.7,,,False
+HumanEval,26,11,0.005,-201.5,,,False
+MMLU,26,15,0.434,-195.2,,,False

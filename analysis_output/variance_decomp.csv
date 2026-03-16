@@ -1,0 +1,4 @@
+predictor,coef,pvalue,partial_r2
+harness_differs,-0.0041,0.559,0.0002
+n_shot_differs,-0.0113,0.138,0.0012
+prompt_template_differs,0.0,,0.0

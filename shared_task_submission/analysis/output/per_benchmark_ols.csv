@@ -1,0 +1,13 @@
+benchmark,predictor,n,partial_r2,f2_cohen,f_stat,p_value,full_model_r2,beta
+GSM8K,harness_differs,23,0.0,0.0,0.0002,0.988,0.6071,-0.0007
+GSM8K,n_shot_diff,23,0.0103,0.0263,0.4988,0.4886,0.6071,0.0069
+GSM8K,prompt_template_differs,23,0.2396,0.61,11.5894,0.003,0.6071,0.1324
+HellaSwag,harness_differs,14,0.001,0.0358,0.3581,0.5629,0.9723,-0.0008
+HellaSwag,n_shot_diff,14,0.0,0.0,0.0,1.0,0.9723,0.0
+HellaSwag,prompt_template_differs,14,0.6204,22.3829,223.8292,0.0,0.9723,0.0187
+HumanEval,harness_differs,26,0.0053,0.0053,0.1165,0.7361,0.0053,-0.0018
+HumanEval,n_shot_diff,26,0.0,0.0,0.0,1.0,0.0053,0.0
+HumanEval,prompt_template_differs,26,0.0,0.0,0.0,1.0,0.0053,0.0
+MMLU,harness_differs,26,0.4345,0.7682,16.9006,0.0005,0.4345,-0.0144
+MMLU,n_shot_diff,26,0.0,0.0,0.0,1.0,0.4345,0.0
+MMLU,prompt_template_differs,26,0.0,0.0,0.0,1.0,0.4345,0.0

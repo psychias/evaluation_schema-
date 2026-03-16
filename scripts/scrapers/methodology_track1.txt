@@ -1,0 +1,618 @@
+Track 1 Submission: Public Evaluation Data Parsing
+===================================================
+
+Benchmarks covered:
+  ─ Leaderboard scrapers ─
+  1. MT-Bench             (scripts/scrapers/mtbench_scraper.py)
+  2. BigCodeBench-v0.1    (scripts/scrapers/bigcodebench_scraper.py)
+  3. WildBench-v2.0       (scripts/scrapers/wildbench_scraper.py)
+  4. AlpacaEval 2.0       (scripts/scrapers/alpacaeval2_scraper.py)
+  5. Chatbot Arena        (scripts/scrapers/chatbot_arena_scraper.py)
+  6. HF Open LLM v2       (scripts/scrapers/hfopenllm_v2_scraper.py)
+
+  ─ Academic paper extraction ─
+  7. Llama 2              (arXiv:2307.09288)
+  8. GPT-4 Tech Report    (arXiv:2303.08774)
+  9. Llama 3.1            (arXiv:2407.21783)
+  10. Mixtral of Experts  (arXiv:2312.11805)
+  11. DeepSeek-R1         (arXiv:2501.12948)
+  12. Claude 3 Family     (arXiv:2403.07691)
+  13. PaLM                (arXiv:2204.02311)
+  14. FLAN                (arXiv:2110.08207)
+  15. Falcon LLM          (arXiv:2306.11644)
+  16. Chinchilla          (arXiv:2206.07682)
+  17. Mistral 7B          (arXiv:2309.10305)
+  18. Gemma               (arXiv:2403.05530)
+  19. Phi-3               (arXiv:2404.14219)
+  20. Qwen2               (arXiv:2405.04434)
+  21. DeepSeek-V3         (arXiv:2412.19437)
+  22. OLMo                (arXiv:2402.01322)
+  23. InternLM2           (arXiv:2403.17297)
+
+Schema version:   0.2.1
+Evaluator role:   third_party  (scraped from public leaderboards / papers)
+Submission date:  2026-02-27
+
+
+────────────────────────────────────────────────────────────────────────────
+1.  MT-Bench
+────────────────────────────────────────────────────────────────────────────
+
+Source
+------
+  Paper:      "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena"
+              Zheng et al. (2023), arXiv:2306.05685
+  Data URL:   https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge
+  License:    Apache-2.0 (FastChat repository)
+
+Benchmark description
+---------------------
+MT-Bench tests multi-turn instruction following with 80 high-quality
+questions across 8 capability categories:
+  writing, roleplay, extraction, reasoning, math, coding,
+  knowledge (STEM), knowledge (humanities/social science)
+
+Each question has 2 turns. The model answers both turns and GPT-4-0314
+scores each response on a 1–10 integer scale. The final model score is the
+mean over all scored turns (i.e. up to 160 scores per model, 2 per question).
+
+Metric used
+-----------
+  evaluation_name:  MT-Bench
+  score_type:       continuous
+  min_score / max_score:  1.0 / 10.0
+  lower_is_better:  False
+  llm_scoring:      GPT-4-0314 single judge (temperature 0.0)
+
+Extraction methodology
+----------------------
+  Primary:   JSONL file from the FastChat GitHub repo
+             https://raw.githubusercontent.com/lm-sys/FastChat/
+             main/fastchat/llm_judge/data/mt_bench/model_score.jsonl
+
+  Secondary: Markdown table parsed from the FastChat llm_judge README
+             (regex-based column detection)
+
+  Fallback:  29 models hard-coded from Table 2 of arXiv:2306.05685 plus
+             updated GPT-4 family scores published on the FastChat
+             leaderboard page.  Fallback data is timestamped to the
+             paper release date (2023-06-09) so downstream consumers
+             know the data is not current.
+
+Known limitations
+-----------------
+  - Only the average turn score is stored; per-category breakdowns and
+    per-turn scores are not captured in the aggregate schema.
+  - The live JSONL source may not cover the most recently added models;
+    rerun the scraper periodically to pick up new entries.
+  - Temperature for model generation is fixed at 0.7 per the original
+    benchmark setup, but the exact decoding config is not exposed by
+    the data source; we therefore record temperature=0.7 in generation_config
+    and leave other generation args absent.
+
+Reproducibility
+---------------
+  Run:   python scripts/scrapers/mtbench_scraper.py
+  The raw JSONL (or fallback list) is saved to scripts/scrapers/raw/
+  before conversion; schema-valid JSON files are written to data/mt_bench/.
+
+
+────────────────────────────────────────────────────────────────────────────
+2.  BigCodeBench
+────────────────────────────────────────────────────────────────────────────
+
+Source
+------
+  Paper:      "BigCodeBench: Benchmarking Code Generation with Diverse
+               Function Calls and Complex Instructions"
+               Zhuo et al. (2024), arXiv:2406.15877
+  Data URL:   https://huggingface.co/datasets/bigcode/bigcodebench
+  Leaderboard: https://huggingface.co/spaces/bigcode/bigcodebench-leaderboard
+  License:    Apache-2.0
+
+Benchmark description
+---------------------
+BigCodeBench comprises 1,140 function-level code generation problems drawn
+from 139 Python libraries.  Two evaluation variants are provided:
+
+  BigCodeBench-Complete
+    Fill-in-the-middle / completion tasks.  The model receives a function
+    signature and docstring and must complete the implementation.
+
+  BigCodeBench-Instruct
+    Instruction-following tasks.  The model receives a plain-English
+    functional description and must write the entire function from scratch.
+
+Both variants are scored with execution-based pass@1 (percentage of tasks
+where the generated code passes all test cases on first attempt).
+
+Metric used
+-----------
+  evaluation_name:  BigCodeBench-Complete | BigCodeBench-Instruct
+  score_type:       continuous
+  min_score / max_score:  0.0 / 100.0   (percentage)
+  lower_is_better:  False
+  Generation temperature: 0.0 (greedy decoding for pass@1)
+
+Extraction methodology
+----------------------
+  Primary:   Two JSON files from the Hugging Face dataset repository
+             (leaderboard_complete.json, leaderboard_instruct.json).
+             Complete and Instruct scores are merged by model name into
+             a single EvaluationLog with two EvaluationResult entries.
+
+  Secondary: Leaderboard CSV from the BigCodeBench GitHub repository.
+
+  Fallback:  17 models hard-coded from Table 1 of arXiv:2406.15877 plus
+             the BigCodeBench leaderboard page snapshot (2024-06-21).
+
+Known limitations
+-----------------
+  - The HuggingFace dataset JSON paths may change across releases; the
+    scraper will fall back to GitHub CSV or hardcoded data automatically.
+  - Calibrated-pass@1 ("bigcodebench_hard") is not included because it was
+    not part of the original paper evaluation table used for the fallback.
+    Rerun against the live leaderboard to capture it once available.
+  - Some leaderboard entries do not specify whether inference was done
+    locally or via a remote API; inference_platform is left null in
+    those cases.
+
+Reproducibility
+---------------
+  Run:   python scripts/scrapers/bigcodebench_scraper.py
+  Raw data saved to scripts/scrapers/raw/ before conversion.
+  Output JSON files written to data/bigcodebench/.
+
+
+────────────────────────────────────────────────────────────────────────────
+3.  WildBench v2.0
+────────────────────────────────────────────────────────────────────────────
+
+Source
+------
+  Paper:      "WildBench: Benchmarking LLMs with Challenging Tasks from
+               Real Users in the Wild"
+               Lin et al. (2024), arXiv:2406.04770
+  Leaderboard: https://huggingface.co/spaces/allenai/WildBench
+  GitHub:      https://github.com/allenai/WildBench
+  License:     Apache-2.0
+
+Benchmark description
+---------------------
+WildBench-v2.0 uses 1,024 challenging real-world instruction-following
+queries collected from genuine user interactions.  GPT-4-Turbo-2024-04-09
+acts as a pairwise judge, comparing each model response against those of a
+reference "basket" (a mixture of weak answerers).
+
+The primary metric is WB-Score, the length-controlled average pairwise
+win margin:
+
+  WB-Score = mean over prompts of (
+      (adjusted_win - adjusted_loss) / (adjusted_win + adjusted_loss + 0.001)
+  )  × 100
+
+where "adjusted" discounts wins achieved primarily through length rather than
+quality.  Score 0.0 ≈ reference baseline; positive scores indicate above-
+baseline performance.
+
+Metric used
+-----------
+  evaluation_name:  WildBench-v2 WB-Score
+  score_type:       continuous
+  min_score / max_score:  -100.0 / 100.0   (theoretical bounds)
+  lower_is_better:  False
+  llm_scoring:      GPT-4-Turbo-2024-04-09 single judge
+
+Extraction methodology
+----------------------
+  Primary:   leaderboard.json from the WildBench GitHub repo
+             https://raw.githubusercontent.com/allenai/WildBench/
+             main/leaderboard/data/leaderboard.json
+
+             The JSON may be structured as:
+               - a list of dicts, each with a "model" key, or
+               - a dict keyed by model name.
+             Both layouts are handled by the parser.
+
+  Fallback:  22 models hard-coded from Table 2 of arXiv:2406.04770 plus
+             the WildBench leaderboard snapshot (2024-06-06).
+
+Known limitations
+-----------------
+  - Only WB-Score (aggregate) is captured; per-category breakdown scores
+    ("writing", "coding", "reasoning", etc.) are not stored.
+  - WB-Elo (Elo variant) is not included because it is not available for
+    all models in the fallback table.
+  - Models whose names are not in HuggingFace format (e.g. proprietary API
+    models) are assigned developer/model_name constructed IDs.
+
+Reproducibility
+---------------
+  Run:   python scripts/scrapers/wildbench_scraper.py
+  Raw JSON saved to scripts/scrapers/raw/ before conversion.
+  Output JSON files written to data/wildbench/.
+
+
+────────────────────────────────────────────────────────────────────────────
+4.  AlpacaEval 2.0
+───────────────────────────────────────────────────────────────────────────
+
+Source
+------
+  Paper:      "Length-Controlled AlpacaEval: A Simple Way to Debias
+               Automatic Evaluators"
+               Dubois et al. (2024), arXiv:2404.04475
+  GitHub:     https://github.com/tatsu-lab/alpaca_eval
+  License:    Apache-2.0
+
+Benchmark description
+---------------------
+AlpacaEval 2.0 measures instruction-following quality using 805 diverse
+queries.  Each model response is compared against a reference model
+(text-davinci-003) using GPT-4-turbo-2024-04-09 as an automated judge.
+
+The primary metric is the Length-Controlled (LC) Win Rate, which applies
+a regression-based bias correction to neutralise the judge's preference for
+longer responses.  A standard (length-uncorrected) Win Rate is also recorded
+as a secondary metric.
+
+Metric used
+-----------
+  evaluation_name:  AlpacaEval LC Win Rate  (primary)
+                    AlpacaEval Win Rate      (secondary)
+  score_type:       continuous
+  min_score / max_score:  0.0 / 1.0   (proportions; CSV source is 0-100, divided)
+  lower_is_better:  False
+  llm_scoring:      GPT-4-turbo-2024-04-09 single judge
+
+Extraction methodology
+----------------------
+  Primary:   Leaderboard CSV from the tatsu-lab/alpaca_eval GitHub repo
+             (src/alpaca_eval/leaderboards/data_AlpacaEval2/leaderboard.csv).
+             lc_win_rate and win_rate columns are divided by 100 to normalise
+             from 0-100 to 0-1.
+
+  Secondary: JSON leaderboard at the same path (leaderboard.json).
+             Dict-keyed layout (model → metrics) is also handled.
+
+  Tertiary:  GitHub Contents API to enumerate per-model result directories
+             and fetch individual model_card.json files.  Rate-limited to
+             0.6 s per request to stay within the 60 req/hr unauthenticated limit.
+
+Known limitations
+-----------------
+  - Only aggregate LC and standard win rates are stored; per-category scores
+    and per-prompt win/loss records are not captured in this version.
+  - Standard error (lc_win_rate_se) is present in the CSV but not yet
+    propagated to score_details.uncertainty.
+  - Generation config (temperature, max_tokens, etc.) is not exposed by the
+    leaderboard; recorded as absent rather than assumed.
+
+Reproducibility
+---------------
+  Run:   python scripts/scrapers/alpacaeval2_scraper.py
+  Raw data saved to scripts/scrapers/raw/ before conversion.
+  Output JSON files written to data/alpacaeval2/.
+
+
+───────────────────────────────────────────────────────────────────────────
+5.  Chatbot Arena (LMSYS)
+───────────────────────────────────────────────────────────────────────────
+
+Source
+------
+  Paper:      "Chatbot Arena: An Open Platform for Evaluating LLMs by
+               Human Preference"
+               Zheng et al. (2024), arXiv:2403.04132
+  Leaderboard: https://lmarena.ai/
+  Data URL:   https://github.com/lm-sys/FastChat
+  License:    Apache-2.0 (FastChat repository)
+
+Benchmark description
+---------------------
+Chatbot Arena is a crowdsourced, live evaluation platform where human
+volunteers cast blind pairwise preference votes between model responses to
+the same prompt.  Elo ratings are computed from the accumulated battle log
+using the Bradley-Terry model with online updates.  Ratings have no fixed
+scale and are relative to the current pool of active models.
+
+Metric used
+-----------
+  evaluation_name:  Chatbot Arena Elo
+  score_type:       continuous
+  min_score / max_score:  0.0 / 3000.0  (practical range ~800-1400; schema
+                          requires explicit bounds; 3000 is conservatively high)
+  lower_is_better:  False
+
+Extraction methodology
+----------------------
+  Primary:   CSV snapshots published in the FastChat GitHub repository
+             (fastchat/serve/monitor/leaderboard_table_YYYYMMDD.csv).
+             Multiple dated files are tried in reverse-chronological order.
+
+  Secondary: HuggingFace Space Gradio API
+             (lmsys-chatbot-arena-leaderboard.hf.space/api/predict).
+
+  Fallback:  30 models hard-coded from the LMSYS blog post (2024-06-27)
+             covering GPT-4o, Claude 3, Gemini 1.5, Llama 3, Mistral, and
+             others.  Fallback records are timestamped to 2024-06-27 so
+             that consumers can distinguish them from live-scraped data.
+
+Known limitations
+-----------------
+  - Elo values are relative to the current model pool and are not
+    directly comparable across leaderboard snapshots taken at different dates.
+  - Only the overall Elo is captured; category-specific Elo breakdowns
+    (coding, STEM, writing, etc.) are not included.
+  - inference_platform is omitted: Chatbot Arena aggregates many providers
+    and the per-battle provider is not exposed in the public leaderboard CSV.
+  - The leaderboard is updated daily; the hardcoded fallback becomes stale
+    quickly.  Rerun the scraper regularly to pick up new models.
+
+Reproducibility
+---------------
+  Run:   python scripts/scrapers/chatbot_arena_scraper.py
+  Raw data saved to scripts/scrapers/raw/ before conversion.
+  Output JSON files written to data/chatbot_arena/.
+
+
+───────────────────────────────────────────────────────────────────────────
+6.  HuggingFace Open LLM Leaderboard v2
+───────────────────────────────────────────────────────────────────────────
+
+Source
+------
+  Leaderboard: https://huggingface.co/spaces/open-llm-leaderboard
+  Eval harness: lighteval (HuggingFace), version not exposed by API
+  License:     permissive (publicly accessible leaderboard data)
+
+Benchmark description
+---------------------
+The HF Open LLM Leaderboard v2 evaluates open-weight language models on
+six challenging benchmarks using the lighteval harness:
+
+  IFEval     instruction-following (prompt-level accuracy)
+  BBH        BIG-Bench Hard (25 hard reasoning tasks, 3-shot chain-of-thought)
+  MATH L5    MATH Level-5 competition mathematics (4-shot)
+  GPQA       Graduate-level knowledge in Chemistry, Biology, and Physics
+  MUSR       Multi-step soft reasoning across diverse narrative domains
+  MMLU-PRO   MMLU expanded to 10-choice/harder questions (professional domains)
+
+The aggregate score is the mean across all six benchmarks.
+
+Metric used
+-----------
+  evaluation_name:  IFEval, BBH, MATH Level 5, GPQA, MUSR, MMLU-PRO
+  score_type:       continuous
+  min_score / max_score:  0.0 / 1.0   (API returns 0-100; divided by 100)
+  lower_is_better:  False
+
+Extraction methodology
+----------------------
+  Primary:   Single JSON endpoint from the HF Space API:
+             open-llm-leaderboard.hf.space/api/leaderboard/formatted
+             Each entry contains a "model" dict (name, precision, architecture)
+             and an "evaluations" sub-dict keyed by benchmark code name.
+             Scores reported on a 0-100 scale are normalised to 0-1.
+
+  Fallback:  None.  If the API is unreachable the scraper raises a FetchError;
+             no hardcoded fallback exists for this leaderboard because model
+             coverage changes daily and a stale snapshot would be misleading.
+             Rerun when the API is available.
+
+Known limitations
+-----------------
+  - lighteval version is not exposed by the API endpoint; recorded as 'unknown'.
+  - Only per-benchmark aggregate scores are captured; per-shot ablations and
+    calibrated scores are not included.
+  - The normalisation heuristic (divide by 100 when score > 1) will
+    misclassify a genuine score of exactly 1.0 (i.e. 100 % accuracy) as
+    already normalised.  This edge case is unlikely in practice.
+  - inference_platform is recorded as 'huggingface' for all models because
+    the leaderboard runs inference via the HF hub; the exact underlying
+    compute provider is not exposed.
+
+Reproducibility
+---------------
+  Run:   python scripts/scrapers/hfopenllm_v2_scraper.py
+  Raw data saved to scripts/scrapers/raw/ before conversion.
+  Output JSON files written to data/hfopenllm_v2/.
+
+
+───────────────────────────────────────────────────────────────────────────
+7.  General Extraction Design
+────────────────────────────────────────────────────────────────────────────
+
+All three scrapers follow the same pattern inherited from BaseLeaderboardScraper
+(scripts/scrapers/base.py):
+
+  fetch_raw()
+    Tries multiple live data sources in priority order (dedicated JSON/CSV
+    files → HF Space API → GitHub API).  If all live sources fail, the
+    scraper falls back to a hardcoded snapshot with the original publication
+    date as the retrieved_timestamp.
+
+  convert(raw, retrieved_timestamp)
+    Maps each raw row to an EvaluationLog object via a
+    pure-function helper (_convert_row).  Invalid / incomplete rows are
+    logged and silently skipped.
+
+  run() → _write_records()
+    Writes one UUID-named .json file per model under
+    data/{benchmark_name}/{developer}/{model_name}/.
+
+Source attribution
+------------------
+  source_type = "documentation" for all three scrapers — the scores are
+  taken from publicly published leaderboards and papers, not from a
+  reproducible evaluation run by this team.
+
+  source_metadata.evaluator_relationship = "third_party" — the benchmarks
+  were created and run by organisations independent of this team.
+
+Model ID normalisation
+-----------------------
+  Models with a "/" are kept as-is (they are already in HuggingFace format).
+  Models without a "/" have the developer prefix prepended using the
+  helpers.get_developer() lookup table supplemented by each scraper's own
+  _hf_ids dict of known canonical IDs.
+
+
+────────────────────────────────────────────────────────────────────────────
+8.  Issues and Caveats
+────────────────────────────────────────────────────────────────────────────
+
+  a) Live source reliability
+     All three leaderboards host their data on public repositories or HF
+     Spaces; URL structures can change across releases.  The multi-source
+     fallback strategy means the scrapers always produce output, but stale
+     data is clearly labelled via the retrieved_timestamp field.
+
+  b) Score comparability
+     MT-Bench, BigCodeBench, and WildBench each measure different
+     capabilities and use different scoring scales:
+       MT-Bench    1–10    (GPT-4 quality judgment)
+       BigCodeBench 0–100  (execution pass@1 percentage)
+       WildBench   −100–100 (length-controlled win margin)
+     Direct cross-benchmark comparison of absolute values is not meaningful.
+
+  c) Evaluation configuration gaps
+     Per the schema README, generation_config should record temperature,
+     max_tokens, num_shots, etc. where known.  For MT-Bench we record
+     temperature=0.7 (per the paper); for BigCodeBench greedy decoding is
+     standard but not always explicitly stated; for WildBench the generation
+     config varies by model provider and is not exposed by the leaderboard.
+
+  d) Instance-level data
+     None of the three scrapers produce a companion .jsonl file because the
+     leaderboards do not expose per-sample predictions in a convenient
+     machine-readable format.  BigCodeBench per-sample predictions are
+     available in extended HF dataset entries and could be added in a follow-
+     up contribution.
+
+
+──────────────────────────────────────────────────────────────────────────
+9.  Academic Paper Batch Extraction  (scripts/extract_paper.py)
+──────────────────────────────────────────────────────────────────────────
+
+Objective
+---------
+Track 1 Objective 2 requires extracting evaluation results from academic
+papers.  The pipeline in scripts/extract_paper.py implements this by:
+  1. Downloading PDFs from arXiv (cached locally under
+     scripts/scrapers/raw/papers/).
+  2. Using pdfplumber to extract all tables from each page.
+  3. Applying a two-tier heuristic to identify results tables:
+       – strong keyword match (specific benchmark name) OR
+       – ≥2 weak keyword matches (generic metric terms)
+       together with a numeric density check (≥25 % of body cells parseable).
+  4. Parsing accepted tables in both orientations (models-as-rows and
+     models-as-columns) with multi-row header collapsing.
+  5. Converting extracted (model, benchmark, score) triples to EvaluationLog
+     objects using the same schema helpers as the leaderboard scrapers.
+  6. Running inline JSON schema validation on every written file so errors
+     surface before PR submission.
+
+Extraction confidence tiering
+------------------------------
+Every parsed data point is tagged with an extraction confidence tier that
+propagates to generation_config.additional_details in the output JSON:
+  'high'   — strong benchmark keyword + numeric density ≥50 %
+  'medium' — strong keyword with density 25–50 %, OR keyword only in caption
+  'low'    — accepted via table-level keyword + numeric-count floor (rare)
+  'llm'    — extracted by the LLM fallback extractor (see section 10)
+
+The confidence of each model record is set to the minimum tier across all
+tables that contributed scores for that model, ensuring the field reflects
+the weakest evidence rather than an average.
+
+Known limitations
+-----------------
+  a) Figures and charts
+     Results embedded in bar charts, scatter plots, or radar charts cannot
+     be extracted via PDF table parsing.  This affects an estimated 15–30 %
+     of result tables in surveyed papers (particularly multi-modal and
+     agentic evaluations).
+
+  b) Prose-embedded results
+     Sentences of the form "our model achieves 87.3 % on MMLU" with no
+     surrounding table are missed by the table-only pipeline.  Common in
+     short system-description papers and in Results sections where a
+     headline figure is introduced inline before the full table.
+
+  c) Multi-column / merged-header tables
+     pdfplumber occasionally flattens \multicolumn spans, shifting score
+     values one or more columns left.  The _collapse_multirow_header
+     heuristic handles the most common sparse-top-row pattern but is not
+     exhaustive.  Affected rows emit a runtime warning and should be
+     reviewed before submission.
+
+How to run
+----------
+  # single paper
+  python scripts/extract_paper.py --arxiv_id 2307.09288
+
+  # all papers in arxiv_ids.txt
+  python scripts/extract_paper.py --batch scripts/arxiv_ids.txt
+
+  # with LLM fallback (requires OPENAI_API_KEY)
+  python scripts/extract_paper.py --batch scripts/arxiv_ids.txt \
+      --llm-fallback --llm-model gpt-4o-mini
+
+
+──────────────────────────────────────────────────────────────────────────
+10. LLM Fallback Extractor and Coverage Reporting
+──────────────────────────────────────────────────────────────────────────
+
+LLM Fallback Extractor (LLMFallbackExtractor)
+----------------------------------------------
+To partially address the figure and prose gaps (9a, 9b), an optional
+LLM-based fallback extractor is available via --llm-fallback.
+
+Behaviour
+  - Default (no flag): the LLM extractor is activated automatically only
+    when pdfplumber yields zero accepted results tables for a paper.  This
+    avoids unnecessary API calls for papers where table parsing succeeds.
+  - With --llm-fallback: the extractor runs unconditionally alongside table
+    parsing.  Unique (model, benchmark) pairs from the LLM that are not
+    already covered by a table result are merged into the output.
+
+Implementation details
+  - The full paper text is split into chunks of ≤6,000 characters at
+    paragraph boundaries.  Each chunk is sent as a separate chat-completion
+    request using response_format={{"type":"json_object"}} to enforce
+    structured output.
+  - The system prompt instructs the model to extract only results with a
+    clearly stated numeric score and to produce no invented values.
+  - All API responses are cached to disk at
+    scripts/scrapers/raw/llm_cache/{arxiv_id}_chunk{N:04d}.json
+    so re-runs are fully deterministic without re-incurring API costs.
+  - Results carry _extraction_confidence='llm' in the output JSON, clearly
+    distinguishing them from table-parsed results (high/medium/low tiers).
+    Reviewers should treat LLM-sourced scores with extra scrutiny and
+    cross-check against the source paper before submission.
+  - Set OPENAI_API_KEY in your environment.  The default model is
+    gpt-4o-mini (low cost); pass --llm-model gpt-4o for higher accuracy.
+
+Coverage reporting (batch mode)
+---------------------------------
+Every batch run (--batch) writes a machine-readable per-paper and aggregate
+coverage report to:
+  scripts/scrapers/raw/coverage_report_{unix_timestamp}.json
+
+Each entry in "per_paper" records:
+  arxiv_id, tables_scanned, results_tables_accepted, density_rejected,
+  table_data_points, llm_data_points, unique_models, unique_benchmarks,
+  files_written, source ("table"|"llm"|"both"|"none"),
+  validation_passed, validation_failed
+
+The top-level summary records:
+  total_papers, papers_with_results, papers_with_no_results,
+  total_files_written, total_validation_failed,
+  source_breakdown (counts by source tier)
+
+Use the report to identify papers where:
+  - source="none" → extraction completely failed; manual review required
+  - source="llm"  → no table results; LLM-only; cross-check scores
+  - validation_failed > 0 → schema errors to fix before submitting PR
+

@@ -1,0 +1,2420 @@
+  [developer-inference] could not identify developer for '0-shot 1-shot Few-shot.PaLM 540B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Prior SOTA' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Pretraining only Code Finetuning.PaLM 540B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'original baseline repeats in data refreshed data (new data added to avoid training on any data more than once)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '795B tokens 890B tokens 890B tokens (trained on unique data) (smaller subcorpora see data repeats in last 95B tokens)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '62.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '78.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '74.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+processing 50 arXiv papers from scripts/arxiv_ids_full.txt...
+
+[2203.15556] fetching paper title from arXiv...
+  title not found — using arXiv ID as fallback
+[2203.15556] downloading PDF...
+  downloading https://arxiv.org/pdf/2203.15556.pdf ...
+  saved to scripts/scrapers/raw/papers/2203.15556.pdf
+[2203.15556] detecting eval framework...
+  detected eval framework: helm
+[2203.15556] extracting tables (2203.15556.pdf)...
+  found 23 tables across all pages
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (4 rows, 3 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: results table accepted (20 rows, 19 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (30 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (32 rows) — skipped
+[2203.15556] scanning prose and figure captions...
+
+[2203.15556] extraction summary:
+  tables scanned:          23
+  results tables accepted: 2
+  keyword-only rejects:    11  (potential false negatives — review manually)
+  table data points:       22
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       22
+  unique models:           3
+  unique benchmarks:       22
+  source:                  table
+[2203.15556] converted 3 model records
+[2203.15556] written 3 files to data/papers_2203.15556/
+[2203.15556] schema validation: 3 passed, 0 failed — all passed
+
+[2204.02311] fetching paper title from arXiv...
+  title: PaLM: Scaling Language Modeling with Pathways
+[2204.02311] downloading PDF...
+[2204.02311] detecting eval framework...
+  detected eval framework: helm
+[2204.02311] extracting tables (2204.02311.pdf)...
+  found 51 tables across all pages
+  page 1: results table accepted (41 rows, 0 data points, confidence=medium)
+  page 1: results table accepted (31 rows, 78 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: results table accepted (4 rows, 1 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (9 rows, 1 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (14 rows, 10 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (19 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (61 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (21 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: results table accepted (13 rows, 9 data points, confidence=high)
+  page 1: results table accepted (9 rows, 7 data points, confidence=medium)
+  page 1: results table accepted (10 rows, 8 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (32 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (25 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+[2204.02311] scanning prose and figure captions...
+
+[2204.02311] extraction summary:
+  tables scanned:          51
+  results tables accepted: 8
+  keyword-only rejects:    25  (potential false negatives — review manually)
+  table data points:       114
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       114
+  unique models:           10
+  unique benchmarks:       65
+  source:                  table
+[2204.02311] converted 10 model records
+  [developer-inference] 5 model(s) have developer='unknown' — verify these before submission:
+    unknown/0-shot 1-shot Few-shot.PaLM 540B
+    unknown/Prior SOTA
+    unknown/Pretraining only Code Finetuning.PaLM 540B
+    unknown/original baseline repeats in data refreshed data (new data added to avoid training on any data more than once)
+    unknown/795B tokens 890B tokens 890B tokens (trained on unique data) (smaller subcorpora see data repeats in last 95B tokens)
+[2204.02311] written 10 files to data/papers_2204.02311/
+[2204.02311] schema validation: 10 passed, 0 failed — all passed
+
+[2205.01068] fetching paper title from arXiv...
+  title: OPT: Open Pre-trained Transformer Language Models
+[2205.01068] downloading PDF...
+  downloading https://arxiv.org/pdf/2205.01068.pdf ...
+  saved to scripts/scrapers/raw/papers/2205.01068.pdf
+[2205.01068] detecting eval framework...
+[2205.01068] extracting tables (2205.01068.pdf)...
+  found 6 tables across all pages
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: results table accepted (11 rows, 15 data points, confidence=high)
+  page 1: results table accepted (16 rows, 6 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+[2205.01068] scanning prose and figure captions...
+
+[2205.01068] extraction summary:
+  tables scanned:          6
+  results tables accepted: 2
+  keyword-only rejects:    2  (potential false negatives — review manually)
+  table data points:       21
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       21
+  unique models:           4
+  unique benchmarks:       10
+  source:                  table
+[2205.01068] converted 4 model records
+  [developer-inference] 3 model(s) have developer='unknown' — verify these before submission:
+    unknown/62.
+    unknown/78.
+    unknown/74.
+[2205.01068] written 4 files to data/papers_2205.01068/
+[2205.01068] schema validation: 4 passed, 0 failed — all passed
+
+[2210.11416] fetching paper title from arXiv...
+  title: Scaling Instruction-Finetuned Language Models
+[2210.11416] downloading PDF...
+  downloading https://arxiv.org/pdf/2210.11416.pdf ...
+  saved to scripts/scrapers/raw/papers/2210.11416.pdf
+[2210.11416] detecting eval framework...
+  detected eval framework: bigbench
+[2210.11416] extracting tables (2210.11416.pdf)...
+  found 27 tables across all pages
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped  [developer-inference] could not identify developer for 'Gradient clipping' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Arabic (ar) 4.18 37.16 51.43 45.14 50.86 54.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Bengali (bn) 2.60 42.51 48.79 35.34 58.22 57.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'English (en)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Spanish (es) 57.97 45.44 64.43 59.66 58.32 61.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'French (fr) 60.99 46.13 64.82 60.25 60.47 64.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Hindi (hi) 3.02 40.20 62.77 58.37 59.40 60.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Indonesian (id) 41.53 45.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Kannada (kn) 2.79 4.32 50.63 40.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Malayalam (ml) 2.98 41.33 54.34 42.41 57.91 55.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Portuguese (pt) 57.95 48.55 64.89 61.27 60.16 62.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Swahili (sw) 30.60 31.89 31.95 29.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Tamil (ta) 1.79 29.63 50.17 36.77 55.04 52.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Telugu (te) 2.26 36.03 52.82 40.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Urdu (ur) 2.70 26.11 56.37 52.80 56.70 51.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Vietnamese (vi) 21.47 44.33 59.68 56.61 56.67 59.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Arabic (ar) 29.60 42.57 52.19 46.20 57.67 48.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'English (en) 64.32 39.76 63.06 61.72 60.97 61.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Spanish (es) 58.16 54.92 59.91 56.56 63.18 61.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'French (fr) 77.49 58.61 74.30 70.55 77.95 73.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Chinese (zh) 33.55 49.41 61.75 58.75 63.02 58.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '65.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '62.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (21 rows) — skipped
+  page 1: results table accepted (28 rows, 0 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (21 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (19 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (25 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (25 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (21 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (23 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (26 rows) — skipped
+[2210.11416] scanning prose and figure captions...
+
+[2210.11416] extraction summary:
+  tables scanned:          27
+  results tables accepted: 1
+  keyword-only rejects:    21  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2210.11416] no results found — skipping
+
+[2211.05100] fetching paper title from arXiv...
+  title: BLOOM: A 176B-Parameter Open-Access Multilingual Language Model
+[2211.05100] downloading PDF...
+  downloading https://arxiv.org/pdf/2211.05100.pdf ...
+  saved to scripts/scrapers/raw/papers/2211.05100.pdf
+[2211.05100] detecting eval framework...
+  detected eval framework: helm
+[2211.05100] extracting tables (2211.05100.pdf)...
+  found 18 tables across all pages
+  page 1: table has benchmark keywords but failed density check (48 rows) — skipped
+  page 1: results table accepted (30 rows, 2 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: results table accepted (23 rows, 20 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: results table accepted (37 rows, 0 data points, confidence=medium)
+[2211.05100] scanning prose and figure captions...
+
+[2211.05100] extraction summary:
+  tables scanned:          18
+  results tables accepted: 3
+  keyword-only rejects:    6  (potential false negatives — review manually)
+  table data points:       22
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       22
+  unique models:           21
+  unique benchmarks:       5
+  source:                  table
+[2211.05100] converted 21 model records
+  [developer-inference] 21 model(s) have developer='unknown' — verify these before submission:
+    unknown/Gradient clipping
+    unknown/Arabic (ar) 4.18 37.16 51.43 45.14 50.86 54.
+    unknown/Bengali (bn) 2.60 42.51 48.79 35.34 58.22 57.
+    unknown/English (en)
+    unknown/Spanish (es) 57.97 45.44 64.43 59.66 58.32 61.
+    unknown/French (fr) 60.99 46.13 64.82 60.25 60.47 64.
+    unknown/Hindi (hi) 3.02 40.20 62.77 58.37 59.40 60.
+    unknown/Indonesian (id) 41.53 45.
+    unknown/Kannada (kn) 2.79 4.32 50.63 40.
+    unknown/Malayalam (ml) 2.98 41.33 54.34 42.41 57.91 55.
+    unknown/Portuguese (pt) 57.95 48.55 64.89 61.27 60.16 62.
+    unknown/Swahili (sw) 30.60 31.89 31.95 29.
+    unknown/Tamil (ta) 1.79 29.63 50.17 36.77 55.04 52.
+    unknown/Telugu (te) 2.26 36.03 52.82 40.
+    unknown/Urdu (ur) 2.70 26.11 56.37 52.80 56.70 51.
+    unknown/Vietnamese (vi) 21.47 44.33 59.68 56.61 56.67 59.
+    unknown/Arabic (ar) 29.60 42.57 52.19 46.20 57.67 48.
+    unknown/English (en) 64.32 39.76 63.06 61.72 60.97 61.
+    unknown/Spanish (es) 58.16 54.92 59.91 56.56 63.18 61.
+    unknown/French (fr) 77.49 58.61 74.30 70.55 77.95 73.
+    unknown/Chinese (zh) 33.55 49.41 61.75 58.75 63.02 58.
+[2211.05100] written 21 files to data/papers_2211.05100/
+[2211.05100] schema validation: 21 passed, 0 failed — all passed
+
+[2302.13971] fetching paper title from arXiv...
+  title: LLaMA: Open and Efficient Foundation Language Models
+[2302.13971] downloading PDF...
+  downloading https://arxiv.org/pdf/2302.13971.pdf ...
+  saved to scripts/scrapers/raw/papers/2302.13971.pdf
+[2302.13971] detecting eval framework...
+[2302.13971] extracting tables (2302.13971.pdf)...
+  found 18 tables across all pages
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: results table accepted (11 rows, 11 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (60 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (15 rows) — skipped
+[2302.13971] scanning prose and figure captions...
+
+[2302.13971] extraction summary:
+  tables scanned:          18
+  results tables accepted: 1
+  keyword-only rejects:    9  (potential false negatives — review manually)
+  table data points:       11
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       11
+  unique models:           3
+  unique benchmarks:       8
+  source:                  table
+[2302.13971] converted 3 model records
+  [developer-inference] 2 model(s) have developer='unknown' — verify these before submission:
+    unknown/65.
+    unknown/62.
+[2302.13971] written 3 files to data/papers_2302.13971/
+[2302.13971] schema validation: 3 passed, 0 failed — all passed
+
+[2303.08774] fetching paper title from arXiv...
+  title: GPT-4 Technical Report
+[2303.08774] downloading PDF...
+[2303.08774] detecting eval framework...
+  detected eval framework: openai_evals
+[2303.08774] extracting tables (2303.08774.pdf)...
+  found 12 tables across all pages
+  page 1: table has benchmark keywords but failed density check (33 rows) — skipped
+  page 1: results table accepted (15 rows, 6 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (30 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (35 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (50 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped  [developer-inference] could not identify developer for 'Evaluated few-shot Evaluated few-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'NaturalQuestions (EM) 29.3 25.3 32.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'WebQuestions (EM) 22.6 21.8 26.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'LAMBADA 81.8 80.7 83.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HellaSwag 83.6 82.0 84.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'StoryCloze 86.1 85.6 86.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'WSC 86.3 84.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Winograd 87.5 87.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'SQuAD v2 (EM) 78.7 75.7 77.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RACE-H 52.1 53.3 57.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RACE-M 69.3 68.9 71.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'PIQA 83.9 82.2 83.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ARC-C 60.1 59.6 64.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ARC-E 85.0 85.6 88.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenBookQA 53.6 57.4 56.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'BoolQ 88.7 88.1 88.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'COPA 91.0 89.0 90.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RTE 78.7 78.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MultiRC (F1) 84.9 84.0 84.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ReCoRD 92.8 92.1 92.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ANLI-R1 52.6 53.1 58.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ANLI-R2 48.7 48.8 49.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ANLI-R3 52.3 53.2 54.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Average 70.4 69.9 72.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'NaturalQuestions (EM) 10.11 10.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'LAMBADA 55.46 59.27 60.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Winograd 83.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Winogrande 69.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'WSC 83.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'SQuAD v2 (EM) 56.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RACE-H 40.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RACE-M 56.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'TyDiQA-En (EM)  43.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'PiQA 77.42 77.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ARC-C 40.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ARC-E 71.55 73.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenBookQA 50.60 51.60 50.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'COPA 85.00 87.00 84.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RTE  63.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'WiC  48.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ANLI-R1 33.10 34.70 31.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ANLI-R2 30.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ANLI-R3 32.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Average 57.30 57.61 57.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+[2303.08774] scanning prose and figure captions...
+
+[2303.08774] extraction summary:
+  tables scanned:          12
+  results tables accepted: 1
+  keyword-only rejects:    9  (potential false negatives — review manually)
+  table data points:       6
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       6
+  unique models:           2
+  unique benchmarks:       6
+  source:                  table
+[2303.08774] converted 2 model records
+  [developer-inference] 1 model(s) have developer='unknown' — verify these before submission:
+    unknown/Evaluated few-shot Evaluated few-shot
+[2303.08774] written 2 files to data/papers_2303.08774/
+[2303.08774] schema validation: 2 passed, 0 failed — all passed
+
+[2304.01373] fetching paper title from arXiv...
+  title: Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling
+[2304.01373] downloading PDF...
+  downloading https://arxiv.org/pdf/2304.01373.pdf ...
+  saved to scripts/scrapers/raw/papers/2304.01373.pdf
+[2304.01373] detecting eval framework...
+  detected eval framework: helm
+[2304.01373] extracting tables (2304.01373.pdf)...
+  found 17 tables across all pages
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (33 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+[2304.01373] scanning prose and figure captions...
+
+[2304.01373] extraction summary:
+  tables scanned:          17
+  results tables accepted: 0
+  keyword-only rejects:    14  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2304.01373] no results found — skipping
+
+[2304.10457] fetching paper title from arXiv...
+  title: Angle based dynamic learning rate for gradient descent
+[2304.10457] downloading PDF...
+  downloading https://arxiv.org/pdf/2304.10457.pdf ...
+  saved to scripts/scrapers/raw/papers/2304.10457.pdf
+[2304.10457] detecting eval framework...
+[2304.10457] extracting tables (2304.10457.pdf)...
+  found 4 tables across all pages
+[2304.10457] scanning prose and figure captions...
+
+[2304.10457] extraction summary:
+  tables scanned:          4
+  results tables accepted: 0
+  keyword-only rejects:    0  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2304.10457] no results found — skipping
+
+[2305.10403] fetching paper title from arXiv...
+  title: PaLM 2 Technical Report
+[2305.10403] downloading PDF...
+  downloading https://arxiv.org/pdf/2305.10403.pdf ...
+  saved to scripts/scrapers/raw/papers/2305.10403.pdf
+[2305.10403] detecting eval framework...
+  detected eval framework: bigbench
+[2305.10403] extracting tables (2305.10403.pdf)...
+  found 36 tables across all pages
+  page 1: results table accepted (40 rows, 0 data points, confidence=medium)
+  page 1: results table accepted (28 rows, 26 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (25 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: results table accepted (29 rows, 27 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (20 rows, 14 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (35 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (26 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (15 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (15 rows) — skipped
+[2305.10403] scanning prose and figure captions...
+
+[2305.10403] extraction summary:
+  tables scanned:          36
+  results tables accepted: 4
+  keyword-only rejects:    21  (potential false negatives — review manually)
+  table data points:       67
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       67
+  unique models:           44
+  unique benchmarks:       19
+  source:                  table
+[2305.10403] converted 44 model records
+  [developer-inference] 43 model(s) have developer='unknown' — verify these before submission:
+    unknown/NaturalQuestions (EM) 29.3 25.3 32.
+    unknown/WebQuestions (EM) 22.6 21.8 26.
+    unknown/LAMBADA 81.8 80.7 83.
+    unknown/HellaSwag 83.6 82.0 84.
+    unknown/StoryCloze 86.1 85.6 86.
+    unknown/WSC 86.3 84.
+    unknown/Winograd 87.5 87.
+    unknown/SQuAD v2 (EM) 78.7 75.7 77.
+    unknown/RACE-H 52.1 53.3 57.
+    unknown/RACE-M 69.3 68.9 71.
+    unknown/PIQA 83.9 82.2 83.
+    unknown/ARC-C 60.1 59.6 64.
+    unknown/ARC-E 85.0 85.6 88.
+    unknown/OpenBookQA 53.6 57.4 56.
+    unknown/BoolQ 88.7 88.1 88.
+    unknown/COPA 91.0 89.0 90.
+    unknown/RTE 78.7 78.
+    unknown/MultiRC (F1) 84.9 84.0 84.
+    unknown/ReCoRD 92.8 92.1 92.
+    unknown/ANLI-R1 52.6 53.1 58.
+    unknown/ANLI-R2 48.7 48.8 49.
+    unknown/ANLI-R3 52.3 53.2 54.
+    unknown/Average 70.4 69.9 72.
+    unknown/NaturalQuestions (EM) 10.11 10.
+    unknown/LAMBADA 55.46 59.27 60.
+    unknown/Winograd 83.
+    unknown/Winogrande 69.
+    unknown/WSC 83.
+    unknown/SQuAD v2 (EM) 56.
+    unknown/RACE-H 40.
+    unknown/RACE-M 56.
+    unknown/TyDiQA-En (EM)  43.
+    unknown/PiQA 77.42 77.
+    unknown/ARC-C 40.
+    unknown/ARC-E 71.55 73.
+    unknown/OpenBookQA 50.60 51.60 50.
+    unknown/COPA 85.00 87.00 84.
+    unknown/RTE  63.
+    unknown/WiC  48.
+    unknown/ANLI-R1 33.10 34.70 31.
+    unknown/ANLI-R2 30.
+    unknown/ANLI-R3 32.
+    unknown/Average 57.30 57.61 57.
+[2305.10403] written 44 files to data/papers_2305.10403/
+[2305.10403] schema validation: 44 passed, 0 failed — all passed  [developer-inference] could not identify developer for 'Category Consistent Biased toward first Biased toward second' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'TriviaQA (1-shot) – – 81.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Natural Questions (1-shot)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GSM8K (8-shot)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HumanEval (0-shot) 48.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'BIG-Bench Hard (3-shot) – – 52.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GQA 69.4 78.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+
+[2306.05685] fetching paper title from arXiv...
+  title: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena
+[2306.05685] downloading PDF...
+  downloading https://arxiv.org/pdf/2306.05685.pdf ...
+  saved to scripts/scrapers/raw/papers/2306.05685.pdf
+[2306.05685] detecting eval framework...
+  detected eval framework: helm
+[2306.05685] extracting tables (2306.05685.pdf)...
+  found 16 tables across all pages
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: results table accepted (9 rows, 4 data points, confidence=medium)
+[2306.05685] scanning prose and figure captions...
+
+[2306.05685] extraction summary:
+  tables scanned:          16
+  results tables accepted: 1
+  keyword-only rejects:    4  (potential false negatives — review manually)
+  table data points:       4
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       4
+  unique models:           1
+  unique benchmarks:       4
+  source:                  table
+[2306.05685] converted 1 model records
+  [developer-inference] 1 model(s) have developer='unknown' — verify these before submission:
+    unknown/Category Consistent Biased toward first Biased toward second
+[2306.05685] written 1 files to data/papers_2306.05685/
+[2306.05685] schema validation: 1 passed, 0 failed — all passed
+
+[2306.11644] fetching paper title from arXiv...
+  title: Textbooks Are All You Need
+[2306.11644] downloading PDF...
+[2306.11644] detecting eval framework...
+[2306.11644] extracting tables (2306.11644.pdf)...
+  found 3 tables across all pages
+  page 1: table has benchmark keywords but failed density check (22 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: results table accepted (12 rows, 0 data points, confidence=medium)
+[2306.11644] scanning prose and figure captions...
+  [prose] 1 data point(s) extracted from text (1 models, 1 benchmarks)
+
+[2306.11644] extraction summary:
+  tables scanned:          3
+  results tables accepted: 1
+  keyword-only rejects:    2  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 1
+  llm data points (new):   0
+  total data points:       1
+  unique models:           1
+  unique benchmarks:       1
+  source:                  prose
+[2306.11644] converted 1 model records
+[2306.11644] written 1 files to data/papers_2306.11644/
+[2306.11644] schema validation: 1 passed, 0 failed — all passed
+
+[2307.09288] fetching paper title from arXiv...
+  title: Llama 2: Open Foundation and Fine-Tuned Chat Models
+[2307.09288] downloading PDF...
+[2307.09288] detecting eval framework...
+  detected eval framework: bigbench
+[2307.09288] extracting tables (2307.09288.pdf)...
+  found 50 tables across all pages
+  page 1: table has benchmark keywords but failed density check (30 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: results table accepted (7 rows, 9 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: results table accepted (8 rows, 4 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: results table accepted (4 rows, 2 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (22 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (22 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (22 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (21 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (23 rows) — skipped
+[2307.09288] scanning prose and figure captions...
+
+[2307.09288] extraction summary:
+  tables scanned:          50
+  results tables accepted: 3
+  keyword-only rejects:    33  (potential false negatives — review manually)
+  table data points:       15
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       15
+  unique models:           8
+  unique benchmarks:       8
+  source:                  table
+[2307.09288] converted 8 model records
+  [developer-inference] 6 model(s) have developer='unknown' — verify these before submission:
+    unknown/TriviaQA (1-shot) – – 81.
+    unknown/Natural Questions (1-shot)
+    unknown/GSM8K (8-shot)
+    unknown/HumanEval (0-shot) 48.
+    unknown/BIG-Bench Hard (3-shot) – – 52.
+    unknown/GQA 69.4 78.
+[2307.09288] written 8 files to data/papers_2307.09288/
+[2307.09288] schema validation: 8 passed, 0 failed — all passed
+
+[2308.12950] fetching paper title from arXiv...
+  title: Code Llama: Open Foundation Models for Code
+[2308.12950] downloading PDF...
+  downloading https://arxiv.org/pdf/2308.12950.pdf ...
+  saved to scripts/scrapers/raw/papers/2308.12950.pdf
+[2308.12950] detecting eval framework...
+[2308.12950] extracting tables (2308.12950.pdf)...
+  found 26 tables across all pages
+  page 1: table has benchmark keywords but failed density check (27 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (22 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (21 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped  [developer-inference] could not identify developer for '7B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '13B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] 'Vicuna-13B' matched ambiguous pattern 'vicuna' → attributed to 'lmsys'. Many community fine-tunes share this prefix; verify the attribution and use 'org/model' HF format if possible.
+  [developer-inference] 'Chinese-Alpaca-Plus-13B' matched ambiguous pattern 'alpaca' → attributed to 'stanford'. Many community fine-tunes share this prefix; verify the attribution and use 'org/model' HF format if possible.
+  [developer-inference] could not identify developer for 'XVERSE-13B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '59.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '36.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '40.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '53.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'StableBeluga2  51.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '87.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '84.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '86.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'StableBeluga2  89.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '82.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '85.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'StableBeluga2  84.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (20 rows) — skipped
+[2308.12950] scanning prose and figure captions...
+
+[2308.12950] extraction summary:
+  tables scanned:          26
+  results tables accepted: 0
+  keyword-only rejects:    18  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2308.12950] no results found — skipping
+
+[2309.05463] fetching paper title from arXiv...
+  title: Textbooks Are All You Need II: phi-1.5 technical report
+[2309.05463] downloading PDF...
+  downloading https://arxiv.org/pdf/2309.05463.pdf ...
+  saved to scripts/scrapers/raw/papers/2309.05463.pdf
+[2309.05463] detecting eval framework...
+[2309.05463] extracting tables (2309.05463.pdf)...
+  found 4 tables across all pages
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+[2309.05463] scanning prose and figure captions...
+
+[2309.05463] extraction summary:
+  tables scanned:          4
+  results tables accepted: 0
+  keyword-only rejects:    4  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2309.05463] no results found — skipping
+
+[2309.10305] fetching paper title from arXiv...
+  title: Baichuan 2: Open Large-scale Language Models
+[2309.10305] downloading PDF...
+[2309.10305] detecting eval framework...
+  detected eval framework: lm_eval
+[2309.10305] extracting tables (2309.10305.pdf)...
+  found 13 tables across all pages
+  page 1: results table accepted (17 rows, 11 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (17 rows) — skipped
+  page 1: results table accepted (17 rows, 59 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (17 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (52 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (51 rows) — skipped
+[2309.10305] scanning prose and figure captions...
+
+[2309.10305] extraction summary:
+  tables scanned:          13
+  results tables accepted: 2
+  keyword-only rejects:    7  (potential false negatives — review manually)
+  table data points:       70
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       70
+  unique models:           17
+  unique benchmarks:       10
+  source:                  table
+[2309.10305] converted 17 model records
+  [developer-inference] 3 model(s) have developer='unknown' — verify these before submission:
+    unknown/7B
+    unknown/13B
+    unknown/XVERSE-13B
+[2309.10305] written 17 files to data/papers_2309.10305/
+[2309.10305] schema validation: 17 passed, 0 failed — all passed
+
+[2309.16609] fetching paper title from arXiv...
+  title: Qwen Technical Report
+[2309.16609] downloading PDF...
+  downloading https://arxiv.org/pdf/2309.16609.pdf ...
+  saved to scripts/scrapers/raw/papers/2309.16609.pdf
+[2309.16609] detecting eval framework...
+  detected eval framework: bigbench
+[2309.16609] extracting tables (2309.16609.pdf)...
+  found 25 tables across all pages
+  page 1: table has benchmark keywords but failed density check (30 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (22 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (15 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (30 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (19 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (22 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: results table accepted (19 rows, 5 data points, confidence=low)
+  page 1: results table accepted (20 rows, 5 data points, confidence=low)
+  page 1: results table accepted (17 rows, 6 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+[2309.16609] scanning prose and figure captions...
+
+[2309.16609] extraction summary:
+  tables scanned:          25
+  results tables accepted: 3
+  keyword-only rejects:    15  (potential false negatives — review manually)
+  table data points:       16
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       16
+  unique models:           14
+  unique benchmarks:       4
+  source:                  table
+[2309.16609] converted 14 model records
+  [developer-inference] 12 model(s) have developer='unknown' — verify these before submission:
+    unknown/59.
+    unknown/36.
+    unknown/40.
+    unknown/53.
+    unknown/StableBeluga2  51.
+    unknown/87.
+    unknown/84.
+    unknown/86.
+    unknown/StableBeluga2  89.
+    unknown/82.
+    unknown/85.
+    unknown/StableBeluga2  84.
+[2309.16609] written 14 files to data/papers_2309.16609/
+[2309.16609] schema validation: 14 passed, 0 failed — all passed
+
+[2310.16944] fetching paper title from arXiv...
+  title: Zephyr: Direct Distillation of LM Alignment
+[2310.16944] downloading PDF...
+  downloading https://arxiv.org/pdf/2310.16944.pdf ...
+  saved to scripts/scrapers/raw/papers/2310.16944.pdf
+[2310.16944] detecting eval framework...
+[2310.16944] extracting tables (2310.16944.pdf)...
+  found 5 tables across all pages
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+[2310.16944] scanning prose and figure captions...
+
+[2310.16944] extraction summary:
+  tables scanned:          5
+  results tables accepted: 0
+  keyword-only rejects:    1  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2310.16944] no results found — skipping
+
+[2311.11045] fetching paper title from arXiv...
+  title: Orca 2: Teaching Small Language Models How to Reason
+[2311.11045] downloading PDF...
+  downloading https://arxiv.org/pdf/2311.11045.pdf ...
+  saved to scripts/scrapers/raw/papers/2311.11045.pdf
+[2311.11045] detecting eval framework...
+  [developer-inference] could not identify developer for '- H3 S' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Mamba Mamba S' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'AMBERSAFE  45.22  74.14  37.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'AMBERCHAT  42.83  74.03  38.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenLLaMA-v2-7B 43.69 72.2 41.29 35.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenLLaMA-v1-7B 47.01 71.98 30.49 34.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'AMBER  41.89  74.14  30.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'CRYSTALCODER (7B)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenLLaMA-v2-7B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'TextVQA (val) Text reading on natural images (Singh et al. ,  2019)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'DocVQA (test) Document understanding (Mathew et al. ,  2021)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ChartQA (test) Chart understanding (Masry et al. ,  2022)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'InfographicVQA (test) Infographic understanding (Mathew et al. ,  2022)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MathVista (testmini) Mathematical reasoning (Lu et al. ,  2023)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'AI2D (test) Science diagrams (Kembhavi et al. ,  2016)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'VQAv2 (test-dev) Natural image understanding (Goyal et al. ,  2017)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Art & Design' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Business' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Science 49.3 48.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Health & Medicine' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Humanities & Social Science' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Technology & Engineering' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Overall' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Automatic Speech Recognition' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Automatic Speech Translation' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  detected eval framework: bigbench
+[2311.11045] extracting tables (2311.11045.pdf)...
+  found 15 tables across all pages
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+[2311.11045] scanning prose and figure captions...
+
+[2311.11045] extraction summary:
+  tables scanned:          15
+  results tables accepted: 0
+  keyword-only rejects:    6  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2311.11045] no results found — skipping
+
+[2312.00752] fetching paper title from arXiv...
+  title: Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+[2312.00752] downloading PDF...
+  downloading https://arxiv.org/pdf/2312.00752.pdf ...
+  saved to scripts/scrapers/raw/papers/2312.00752.pdf
+[2312.00752] detecting eval framework...
+[2312.00752] extracting tables (2312.00752.pdf)...
+  found 17 tables across all pages
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: results table accepted (7 rows, 2 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (25 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+[2312.00752] scanning prose and figure captions...
+
+[2312.00752] extraction summary:
+  tables scanned:          17
+  results tables accepted: 1
+  keyword-only rejects:    8  (potential false negatives — review manually)
+  table data points:       2
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       2
+  unique models:           2
+  unique benchmarks:       1
+  source:                  table
+[2312.00752] converted 2 model records
+  [developer-inference] 2 model(s) have developer='unknown' — verify these before submission:
+    unknown/- H3 S
+    unknown/Mamba Mamba S
+[2312.00752] written 2 files to data/papers_2312.00752/
+[2312.00752] schema validation: 2 passed, 0 failed — all passed
+
+[2312.06550] fetching paper title from arXiv...
+  title: LLM360: Towards Fully Transparent Open-Source LLMs
+[2312.06550] downloading PDF...
+  downloading https://arxiv.org/pdf/2312.06550.pdf ...
+  saved to scripts/scrapers/raw/papers/2312.06550.pdf
+[2312.06550] detecting eval framework...
+[2312.06550] extracting tables (2312.06550.pdf)...
+  found 6 tables across all pages
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: results table accepted (15 rows, 17 data points, confidence=high)
+  page 1: results table accepted (9 rows, 9 data points, confidence=medium)
+[2312.06550] scanning prose and figure captions...
+
+[2312.06550] extraction summary:
+  tables scanned:          6
+  results tables accepted: 2
+  keyword-only rejects:    1  (potential false negatives — review manually)
+  table data points:       26
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       26
+  unique models:           21
+  unique benchmarks:       5
+  source:                  table
+[2312.06550] converted 21 model records
+  [developer-inference] 7 model(s) have developer='unknown' — verify these before submission:
+    unknown/AMBERSAFE  45.22  74.14  37.
+    unknown/AMBERCHAT  42.83  74.03  38.
+    unknown/OpenLLaMA-v2-7B 43.69 72.2 41.29 35.
+    unknown/OpenLLaMA-v1-7B 47.01 71.98 30.49 34.
+    unknown/AMBER  41.89  74.14  30.
+    unknown/CRYSTALCODER (7B)
+    unknown/OpenLLaMA-v2-7B
+[2312.06550] written 21 files to data/papers_2312.06550/
+[2312.06550] schema validation: 21 passed, 0 failed — all passed
+
+[2312.11805] fetching paper title from arXiv...
+  title: Gemini: A Family of Highly Capable Multimodal Models
+[2312.11805] downloading PDF...
+[2312.11805] detecting eval framework...
+  detected eval framework: helm
+[2312.11805] extracting tables (2312.11805.pdf)...
+  found 26 tables across all pages
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: results table accepted (9 rows, 7 data points, confidence=medium)
+  page 1: results table accepted (8 rows, 7 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: results table accepted (6 rows, 4 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+[2312.11805] scanning prose and figure captions...
+
+[2312.11805] extraction summary:
+  tables scanned:          26
+  results tables accepted: 3
+  keyword-only rejects:    21  (potential false negatives — review manually)
+  table data points:       18
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       18
+  unique models:           16
+  unique benchmarks:       5
+  source:                  table
+[2312.11805] converted 16 model records
+  [developer-inference] 16 model(s) have developer='unknown' — verify these before submission:
+    unknown/TextVQA (val) Text reading on natural images (Singh et al. ,  2019)
+    unknown/DocVQA (test) Document understanding (Mathew et al. ,  2021)
+    unknown/ChartQA (test) Chart understanding (Masry et al. ,  2022)
+    unknown/InfographicVQA (test) Infographic understanding (Mathew et al. ,  2022)
+    unknown/MathVista (testmini) Mathematical reasoning (Lu et al. ,  2023)
+    unknown/AI2D (test) Science diagrams (Kembhavi et al. ,  2016)
+    unknown/VQAv2 (test-dev) Natural image understanding (Goyal et al. ,  2017)
+    unknown/Art & Design
+    unknown/Business
+    unknown/Science 49.3 48.
+    unknown/Health & Medicine
+    unknown/Humanities & Social Science
+    unknown/Technology & Engineering
+    unknown/Overall
+    unknown/Automatic Speech Recognition
+    unknown/Automatic Speech Translation  [developer-inference] could not identify developer for 'Cand. 2 73.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Sampling Weight' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Sampling weights.Control' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Sampling weights.Mix' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+[2312.11805] written 16 files to data/papers_2312.11805/
+[2312.11805] schema validation: 16 passed, 0 failed — all passed
+
+[2312.15166] fetching paper title from arXiv...
+  title: SOLAR 10.7B: Scaling Large Language Models with Simple yet Effective Depth Up-Scaling
+[2312.15166] downloading PDF...
+  downloading https://arxiv.org/pdf/2312.15166.pdf ...
+  saved to scripts/scrapers/raw/papers/2312.15166.pdf
+[2312.15166] detecting eval framework...
+[2312.15166] extracting tables (2312.15166.pdf)...
+  found 9 tables across all pages
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: results table accepted (3 rows, 1 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+[2312.15166] scanning prose and figure captions...
+
+[2312.15166] extraction summary:
+  tables scanned:          9
+  results tables accepted: 1
+  keyword-only rejects:    8  (potential false negatives — review manually)
+  table data points:       1
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       1
+  unique models:           1
+  unique benchmarks:       1
+  source:                  table
+[2312.15166] converted 1 model records
+  [developer-inference] 1 model(s) have developer='unknown' — verify these before submission:
+    unknown/Cand. 2 73.
+[2312.15166] written 1 files to data/papers_2312.15166/
+[2312.15166] schema validation: 1 passed, 0 failed — all passed
+
+[2401.02385] fetching paper title from arXiv...
+  title: TinyLlama: An Open-Source Small Language Model
+[2401.02385] downloading PDF...
+  downloading https://arxiv.org/pdf/2401.02385.pdf ...
+  saved to scripts/scrapers/raw/papers/2401.02385.pdf
+[2401.02385] detecting eval framework...
+  detected eval framework: bigbench
+[2401.02385] extracting tables (2401.02385.pdf)...
+  found 7 tables across all pages
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+[2401.02385] scanning prose and figure captions...
+
+[2401.02385] extraction summary:
+  tables scanned:          7
+  results tables accepted: 0
+  keyword-only rejects:    5  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2401.02385] no results found — skipping
+
+[2402.01322] fetching paper title from arXiv...
+  title: Large fluctuations in NSPT computations: a lesson from $O(N)$ non-linear sigma models
+[2402.01322] downloading PDF...
+[2402.01322] detecting eval framework...
+[2402.01322] extracting tables (2402.01322.pdf)...
+  found 1 tables across all pages
+[2402.01322] scanning prose and figure captions...
+
+[2402.01322] extraction summary:
+  tables scanned:          1
+  results tables accepted: 0
+  keyword-only rejects:    0  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2402.01322] no results found — skipping
+
+[2402.16819] fetching paper title from arXiv...
+  title: Nemotron-4 15B Technical Report
+[2402.16819] downloading PDF...
+  downloading https://arxiv.org/pdf/2402.16819.pdf ...
+  saved to scripts/scrapers/raw/papers/2402.16819.pdf
+[2402.16819] detecting eval framework...
+  detected eval framework: bigbench
+[2402.16819] extracting tables (2402.16819.pdf)...
+  found 11 tables across all pages
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (4 rows, 0 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+[2402.16819] scanning prose and figure captions...
+
+[2402.16819] extraction summary:
+  tables scanned:          11
+  results tables accepted: 1
+  keyword-only rejects:    10  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2402.16819] no results found — skipping
+
+[2402.17834] fetching paper title from arXiv...
+  title: Stable LM 2 1.6B Technical Report
+[2402.17834] downloading PDF...
+  downloading https://arxiv.org/pdf/2402.17834.pdf ...
+  saved to scripts/scrapers/raw/papers/2402.17834.pdf
+[2402.17834] detecting eval framework...
+  detected eval framework: lm_eval
+[2402.17834] extracting tables (2402.17834.pdf)...
+  found 11 tables across all pages
+  page 1: results table accepted (30 rows, 28 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: results table accepted (10 rows, 54 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+[2402.17834] scanning prose and figure captions...
+
+[2402.17834] extraction summary:
+  tables scanned:          11
+  results tables accepted: 2
+  keyword-only rejects:    7  (potential false negatives — review manually)
+  table data points:       82
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       82
+  unique models:           3
+  unique benchmarks:       36
+  source:                  table
+[2402.17834] converted 3 model records
+  [developer-inference] 3 model(s) have developer='unknown' — verify these before submission:
+    unknown/Sampling Weight
+    unknown/Sampling weights.Control
+    unknown/Sampling weights.Mix
+[2402.17834] written 3 files to data/papers_2402.17834/
+[2402.17834] schema validation: 3 passed, 0 failed — all passed
+
+[2402.19173] fetching paper title from arXiv...
+  title: StarCoder 2 and The Stack v2: The Next Generation
+[2402.19173] downloading PDF...
+  downloading https://arxiv.org/pdf/2402.19173.pdf ...
+  saved to scripts/scrapers/raw/papers/2402.19173.pdf
+[2402.19173] detecting eval framework...
+[2402.19173] extracting tables (2402.19173.pdf)...
+  found 28 tables across all pages
+  page 1: table has benchmark keywords but failed density check (34 rows) — skipped  [developer-inference] could not identify developer for 'C++ C# D Go Java Julia JavaScript Lua PHP 19.3 27.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '28.4  14.4  13.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MatplotlibNumPy\r\nPandas\r\nPyTorch\r\nSciPy' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Scikit\x02\r\nearn Scik\r\nLearn' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Avg.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: results table accepted (28 rows, 6 data points, confidence=low)
+  page 1: results table accepted (15 rows, 5 data points, confidence=low)
+  page 1: results table accepted (10 rows, 9 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: results table accepted (14 rows, 5 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (50 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+[2402.19173] scanning prose and figure captions...
+  [prose] 1 data point(s) extracted from text (1 models, 1 benchmarks)
+
+[2402.19173] extraction summary:
+  tables scanned:          28
+  results tables accepted: 4
+  keyword-only rejects:    20  (potential false negatives — review manually)
+  table data points:       25
+  prose data points (new): 1
+  llm data points (new):   0
+  total data points:       26
+  unique models:           10
+  unique benchmarks:       22
+  source:                  table+prose
+[2402.19173] converted 10 model records
+  [developer-inference] 5 model(s) have developer='unknown' — verify these before submission:
+    unknown/C++ C# D Go Java Julia JavaScript Lua PHP 19.3 27.
+    unknown/28.4  14.4  13.
+    unknown/MatplotlibNumPy
+Pandas
+PyTorch
+SciPy
+    unknown/Scikit
+earn Scik
+Learn
+    unknown/Avg.
+[2402.19173] written 10 files to data/papers_2402.19173/
+[2402.19173] schema validation: 10 passed, 0 failed — all passed
+
+[2403.04652] fetching paper title from arXiv...
+  title: Yi: Open Foundation Models by 01.AI
+[2403.04652] downloading PDF...
+  downloading https://arxiv.org/pdf/2403.04652.pdf ...
+  saved to scripts/scrapers/raw/papers/2403.04652.pdf
+[2403.04652] detecting eval framework...
+  detected eval framework: bigbench
+[2403.04652] extracting tables (2403.04652.pdf)...
+  found 9 tables across all pages
+  page 1: results table accepted (25 rows, 0 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+[2403.04652] scanning prose and figure captions...
+
+[2403.04652] extraction summary:
+  tables scanned:          9
+  results tables accepted: 1
+  keyword-only rejects:    6  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2403.04652] no results found — skipping
+
+[2403.05530] fetching paper title from arXiv...
+  title: Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context
+[2403.05530] downloading PDF...
+[2403.05530] detecting eval framework...
+  detected eval framework: bigbench
+[2403.05530] extracting tables (2403.05530.pdf)...
+  found 64 tables across all pages
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: results table accepted (16 rows, 6 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (6 rows, 5 data points, confidence=low)
+  page 1: results table accepted (6 rows, 4 data points, confidence=medium)
+  page 1: results table accepted (29 rows, 2 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped  [developer-inference] could not identify developer for 'Multimodal Reasoning' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Charts & Documents' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Natural images' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Automatic Speech' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Recognition' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Automatic Speech Translation' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MATH' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '45.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '20.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'IMO-Bench  15.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Coding' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Video understanding' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'WMT23 1-shot sentence-level machine translation from wmt23 (Metric: BLEURT)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MGSM' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '8-shot multilingual math reasoning (Metric: Accuracy)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: results table accepted (10 rows, 3 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+[2403.05530] scanning prose and figure captions...
+
+[2403.05530] extraction summary:
+  tables scanned:          64
+  results tables accepted: 5
+  keyword-only rejects:    52  (potential false negatives — review manually)
+  table data points:       20
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       20
+  unique models:           15
+  unique benchmarks:       4
+  source:                  table
+[2403.05530] converted 15 model records
+  [developer-inference] 15 model(s) have developer='unknown' — verify these before submission:
+    unknown/Multimodal Reasoning
+    unknown/Charts & Documents
+    unknown/Natural images
+    unknown/Automatic Speech
+    unknown/Recognition
+    unknown/Automatic Speech Translation
+    unknown/MATH
+    unknown/45.
+    unknown/20.
+    unknown/IMO-Bench  15.
+    unknown/Coding
+    unknown/Video understanding
+    unknown/WMT23 1-shot sentence-level machine translation from wmt23 (Metric: BLEURT)
+    unknown/MGSM
+    unknown/8-shot multilingual math reasoning (Metric: Accuracy)
+[2403.05530] written 15 files to data/papers_2403.05530/
+[2403.05530] schema validation: 15 passed, 0 failed — all passed
+
+[2403.07691] fetching paper title from arXiv...
+  title: ORPO: Monolithic Preference Optimization without Reference Model
+[2403.07691] downloading PDF...
+[2403.07691] detecting eval framework...
+[2403.07691] extracting tables (2403.07691.pdf)...
+  found 7 tables across all pages
+[2403.07691] scanning prose and figure captions...
+
+[2403.07691] extraction summary:
+  tables scanned:          7
+  results tables accepted: 0
+  keyword-only rejects:    0  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2403.07691] no results found — skipping
+
+[2403.17297] fetching paper title from arXiv...
+  title: InternLM2 Technical Report
+[2403.17297] downloading PDF...
+[2403.17297] detecting eval framework...
+  detected eval framework: bigbench
+[2403.17297] extracting tables (2403.17297.pdf)...
+  found 22 tables across all pages
+  page 1: results table accepted (34 rows, 0 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped
+  page 1: results table accepted (18 rows, 5 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (15 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+[2403.17297] scanning prose and figure captions...
+
+[2403.17297] extraction summary:
+  tables scanned:          22
+  results tables accepted: 2
+  keyword-only rejects:    14  (potential false negatives — review manually)
+  table data points:       5
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       5
+  unique models:           5
+  unique benchmarks:       2
+  source:                  table
+[2403.17297] converted 5 model records
+[2403.17297] written 5 files to data/papers_2403.17297/
+[2403.17297] schema validation: 5 passed, 0 failed — all passed
+
+[2403.19887] fetching paper title from arXiv...
+  title: Jamba: A Hybrid Transformer-Mamba Language Model
+[2403.19887] downloading PDF...
+  downloading https://arxiv.org/pdf/2403.19887.pdf ...
+  saved to scripts/scrapers/raw/papers/2403.19887.pdf
+[2403.19887] detecting eval framework...
+  detected eval framework: bigbench
+[2403.19887] extracting tables (2403.19887.pdf)...
+  found 9 tables across all pages
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: results table accepted (6 rows, 3 data points, confidence=medium)
+  page 1: results table accepted (3 rows, 0 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+[2403.19887] scanning prose and figure captions...
+
+[2403.19887] extraction summary:
+  tables scanned:          9
+  results tables accepted: 2
+  keyword-only rejects:    5  (potential false negatives — review manually)
+  table data points:       3
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       3
+  unique models:           2
+  unique benchmarks:       1
+  source:                  table
+[2403.19887] converted 2 model records
+[2403.19887] written 2 files to data/papers_2403.19887/
+[2403.19887] schema validation: 2 passed, 0 failed — all passed
+
+[2404.05892] fetching paper title from arXiv...
+  title: Eagle and Finch: RWKV with Matrix-Valued States and Dynamic Recurrence
+[2404.05892] downloading PDF...
+  downloading https://arxiv.org/pdf/2404.05892.pdf ...
+  saved to scripts/scrapers/raw/papers/2404.05892.pdf
+[2404.05892] detecting eval framework...
+[2404.05892] extracting tables (2404.05892.pdf)...
+  found 22 tables across all pages
+  page 1: results table accepted (36 rows, 0 data points, confidence=low)
+  page 1: results table accepted (7 rows, 0 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: results table accepted (18 rows, 8 data points, confidence=low)
+  page 1: results table accepted (18 rows, 6 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (14 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (14 rows, 24 data points, confidence=high)
+  page 1: results table accepted (5 rows, 0 data points, confidence=medium)  [developer-inference] could not identify developer for 'Mamba-1.4b 73.1 40.4 48.0 54.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RWKV-4-1.5b 72.5 38.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Finch-1.6b 37.5 46.9  58.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Eagle-3b 30.8 49.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Finch-3b 28.1 50.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RWKV-4-7b 33.1 47.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Eagle-7B 21.0 53.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Eagle-1.5b 65.7 55.0 71.1 62.2 28.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Finch-1.6b 66.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Mamba-1.4b  64.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Eagle-3b 68.7 62.6 74.3 68.6 33.8 46.3 62.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Eagle-7B 74.2 70.9 77.0 73.8 39.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '0.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Eagle-7B Raven-7b 0.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenELM (Ours)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MobiLlama [44]' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '0.45 B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '1.08 B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '3.04 B' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+[2404.05892] scanning prose and figure captions...
+
+[2404.05892] extraction summary:
+  tables scanned:          22
+  results tables accepted: 6
+  keyword-only rejects:    5  (potential false negatives — review manually)
+  table data points:       38
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       38
+  unique models:           15
+  unique benchmarks:       15
+  source:                  table
+[2404.05892] converted 15 model records
+  [developer-inference] 14 model(s) have developer='unknown' — verify these before submission:
+    unknown/Mamba-1.4b 73.1 40.4 48.0 54.
+    unknown/RWKV-4-1.5b 72.5 38.
+    unknown/Finch-1.6b 37.5 46.9  58.
+    unknown/Eagle-3b 30.8 49.
+    unknown/Finch-3b 28.1 50.
+    unknown/RWKV-4-7b 33.1 47.
+    unknown/Eagle-7B 21.0 53.
+    unknown/Eagle-1.5b 65.7 55.0 71.1 62.2 28.
+    unknown/Finch-1.6b 66.
+    unknown/Mamba-1.4b  64.
+    unknown/Eagle-3b 68.7 62.6 74.3 68.6 33.8 46.3 62.
+    unknown/Eagle-7B 74.2 70.9 77.0 73.8 39.
+    unknown/0.
+    unknown/Eagle-7B Raven-7b 0.
+[2404.05892] written 15 files to data/papers_2404.05892/
+[2404.05892] schema validation: 15 passed, 0 failed — all passed
+
+[2404.10774] fetching paper title from arXiv...
+  title: MiniCheck: Efficient Fact-Checking of LLMs on Grounding Documents
+[2404.10774] downloading PDF...
+  downloading https://arxiv.org/pdf/2404.10774.pdf ...
+  saved to scripts/scrapers/raw/papers/2404.10774.pdf
+[2404.10774] detecting eval framework...
+[2404.10774] extracting tables (2404.10774.pdf)...
+  found 17 tables across all pages
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (19 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+[2404.10774] scanning prose and figure captions...
+
+[2404.10774] extraction summary:
+  tables scanned:          17
+  results tables accepted: 0
+  keyword-only rejects:    6  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2404.10774] no results found — skipping
+
+[2404.14219] fetching paper title from arXiv...
+  title: Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone
+[2404.14219] downloading PDF...
+[2404.14219] detecting eval framework...
+  detected eval framework: bigbench
+[2404.14219] extracting tables (2404.14219.pdf)...
+  found 8 tables across all pages
+  page 1: table has benchmark keywords but failed density check (24 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (23 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+[2404.14219] scanning prose and figure captions...
+  [prose] 1 data point(s) extracted from text (1 models, 1 benchmarks)
+
+[2404.14219] extraction summary:
+  tables scanned:          8
+  results tables accepted: 0
+  keyword-only rejects:    7  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 1
+  llm data points (new):   0
+  total data points:       1
+  unique models:           1
+  unique benchmarks:       1
+  source:                  prose
+[2404.14219] converted 1 model records
+[2404.14219] written 1 files to data/papers_2404.14219/
+[2404.14219] schema validation: 1 passed, 0 failed — all passed
+
+[2404.14619] fetching paper title from arXiv...
+  title: OpenELM: An Efficient Language Model Family with Open Training and Inference Framework
+[2404.14619] downloading PDF...
+  downloading https://arxiv.org/pdf/2404.14619.pdf ...
+  saved to scripts/scrapers/raw/papers/2404.14619.pdf
+[2404.14619] detecting eval framework...
+  detected eval framework: lm_eval
+[2404.14619] extracting tables (2404.14619.pdf)...
+  found 15 tables across all pages
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: results table accepted (13 rows, 24 data points, confidence=medium)
+  page 1: results table accepted (9 rows, 8 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: results table accepted (9 rows, 6 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (23 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+[2404.14619] scanning prose and figure captions...
+
+[2404.14619] extraction summary:
+  tables scanned:          15
+  results tables accepted: 3
+  keyword-only rejects:    8  (potential false negatives — review manually)
+  table data points:       38
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       38
+  unique models:           8
+  unique benchmarks:       6
+  source:                  table
+[2404.14619] converted 8 model records
+  [developer-inference] 5 model(s) have developer='unknown' — verify these before submission:
+    unknown/OpenELM (Ours)
+    unknown/MobiLlama [44]
+    unknown/0.45 B
+    unknown/1.08 B
+    unknown/3.04 B
+[2404.14619] written 8 files to data/papers_2404.14619/
+[2404.14619] schema validation: 8 passed, 0 failed — all passed
+
+[2405.04324] fetching paper title from arXiv...
+  title: Granite Code Models: A Family of Open Foundation Models for Code Intelligence
+[2405.04324] downloading PDF...
+  downloading https://arxiv.org/pdf/2405.04324.pdf ...
+  saved to scripts/scrapers/raw/papers/2405.04324.pdf
+[2405.04324] detecting eval framework...
+[2405.04324] extracting tables (2405.04324.pdf)...
+  found 17 tables across all pages
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: results table accepted (44 rows, 41 data points, confidence=medium)
+  page 1: results table accepted (34 rows, 6 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (17 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (17 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (17 rows) — skipped
+  page 1: results table accepted (12 rows, 11 data points, confidence=medium)
+  page 1: results table accepted (44 rows, 43 data points, confidence=medium)
+  page 1: results table accepted (44 rows, 42 data points, confidence=medium)
+  page 1: results table accepted (8 rows, 4 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (17 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (17 rows) — skipped
+[2405.04324] scanning prose and figure captions...
+
+[2405.04324] extraction summary:
+  tables scanned:          17
+  results tables accepted: 6
+  keyword-only rejects:    11  (potential false negatives — review manually)
+  table data points:       147
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       147
+  unique models:           14
+  unique benchmarks:       54
+  source:                  table  [developer-inference] could not identify developer for 'Avg. Base Models' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'CodeGemma-7B 43.7  28.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Granite-8B-Code-Base 44.3  21.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Granite-3B-Code-Base 18.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Granite-20B-Code-Base 26.5 15.5 28.1 17.9 35.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Avg.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Base Models' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Python JavaScript Java Go C++ Rust Base Models' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Granite-20B-Code-Instruct 40.52 0.30 29.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Granite-34B-Code-Instruct  50.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '72B Chat 70B Inst. 8x22B Inst.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ERNIEBot-4.0-202404*（文心一言）' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ERNIEBot-4.0-202312*（文心一言）' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Moonshot-v1-32k-202404*（月之暗面）' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ERNIEBot-3.5（文心一言）' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'SparkDesk-V2（讯飞星火）' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'TriviaQA 59.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '7B Chat 16B Chat Chat' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Small MoE Small MoE Large MoE Large MoE' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Chat Benchmarks' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+[2405.04324] converted 14 model records
+  [developer-inference] 10 model(s) have developer='unknown' — verify these before submission:
+    unknown/Avg. Base Models
+    unknown/CodeGemma-7B 43.7  28.
+    unknown/Granite-8B-Code-Base 44.3  21.
+    unknown/Granite-3B-Code-Base 18.
+    unknown/Granite-20B-Code-Base 26.5 15.5 28.1 17.9 35.
+    unknown/Avg.
+    unknown/Base Models
+    unknown/Python JavaScript Java Go C++ Rust Base Models
+    unknown/Granite-20B-Code-Instruct 40.52 0.30 29.
+    unknown/Granite-34B-Code-Instruct  50.
+[2405.04324] written 14 files to data/papers_2405.04324/
+[2405.04324] schema validation: 14 passed, 0 failed — all passed
+
+[2405.04434] fetching paper title from arXiv...
+  title: DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model
+[2405.04434] downloading PDF...
+[2405.04434] detecting eval framework...
+  detected eval framework: helm
+[2405.04434] extracting tables (2405.04434.pdf)...
+  found 14 tables across all pages
+  page 1: results table accepted (31 rows, 0 data points, confidence=medium)
+  page 1: results table accepted (10 rows, 0 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: results table accepted (32 rows, 9 data points, confidence=high)
+  page 1: results table accepted (24 rows, 28 data points, confidence=medium)
+  page 1: results table accepted (26 rows, 75 data points, confidence=high)
+  page 1: results table accepted (21 rows, 1 data points, confidence=medium)
+  page 1: results table accepted (21 rows, 14 data points, confidence=medium)
+  page 1: results table accepted (6 rows, 0 data points, confidence=medium)
+  page 1: results table accepted (8 rows, 12 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+[2405.04434] scanning prose and figure captions...
+
+[2405.04434] extraction summary:
+  tables scanned:          14
+  results tables accepted: 9
+  keyword-only rejects:    2  (potential false negatives — review manually)
+  table data points:       139
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       139
+  unique models:           36
+  unique benchmarks:       40
+  source:                  table
+[2405.04434] converted 36 model records
+  [developer-inference] 9 model(s) have developer='unknown' — verify these before submission:
+    unknown/72B Chat 70B Inst. 8x22B Inst.
+    unknown/ERNIEBot-4.0-202404*（文心一言）
+    unknown/ERNIEBot-4.0-202312*（文心一言）
+    unknown/Moonshot-v1-32k-202404*（月之暗面）
+    unknown/ERNIEBot-3.5（文心一言）
+    unknown/SparkDesk-V2（讯飞星火）
+    unknown/TriviaQA 59.
+    unknown/7B Chat 16B Chat Chat
+    unknown/Small MoE Small MoE Large MoE Large MoE
+[2405.04434] written 36 files to data/papers_2405.04434/
+[2405.04434] schema validation: 36 passed, 0 failed — all passed
+
+[2405.19327] fetching paper title from arXiv...
+  title: MAP-Neo: Highly Capable and Transparent Bilingual Large Language Model Series
+[2405.19327] downloading PDF...
+  downloading https://arxiv.org/pdf/2405.19327.pdf ...
+  saved to scripts/scrapers/raw/papers/2405.19327.pdf
+[2405.19327] detecting eval framework...
+[2405.19327] extracting tables (2405.19327.pdf)...
+  found 20 tables across all pages
+  page 1: results table accepted (34 rows, 0 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: results table accepted (43 rows, 0 data points, confidence=medium)
+  page 1: results table accepted (48 rows, 91 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (39 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (38 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (41 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (41 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (39 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (28 rows) — skipped
+[2405.19327] scanning prose and figure captions...
+
+[2405.19327] extraction summary:
+  tables scanned:          20
+  results tables accepted: 3
+  keyword-only rejects:    10  (potential false negatives — review manually)
+  table data points:       91
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       91
+  unique models:           2
+  unique benchmarks:       32
+  source:                  table
+[2405.19327] converted 2 model records
+  [developer-inference] 1 model(s) have developer='unknown' — verify these before submission:
+    unknown/Chat Benchmarks
+[2405.19327] written 2 files to data/papers_2405.19327/
+[2405.19327] schema validation: 2 passed, 0 failed — all passed
+
+[2406.12793] fetching paper title from arXiv...
+  title: ChatGLM: A Family of Large Language Models from GLM-130B to GLM-4 All Tools
+[2406.12793] downloading PDF...
+  downloading https://arxiv.org/pdf/2406.12793.pdf ...
+  saved to scripts/scrapers/raw/papers/2406.12793.pdf
+[2406.12793] detecting eval framework...
+  detected eval framework: helm
+[2406.12793] extracting tables (2406.12793.pdf)...
+  found 10 tables across all pages
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: results table accepted (11 rows, 10 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+[2406.12793] scanning prose and figure captions...
+
+[2406.12793] extraction summary:
+  tables scanned:          10
+  results tables accepted: 1
+  keyword-only rejects:    5  (potential false negatives — review manually)
+  table data points:       10
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       10
+  unique models:           10
+  unique benchmarks:       1
+  source:                  table
+[2406.12793] converted 10 model records
+[2406.12793] written 10 files to data/papers_2406.12793/
+[2406.12793] schema validation: 10 passed, 0 failed — all passed
+
+[2407.12511] fetching paper title from arXiv...
+  title: Fast Context-Based Low-Light Image Enhancement via Neural Implicit Representations
+[2407.12511] downloading PDF...
+  downloading https://arxiv.org/pdf/2407.12511.pdf ...
+  saved to scripts/scrapers/raw/papers/2407.12511.pdf
+[2407.12511] detecting eval framework...
+  detected eval framework: helm
+[2407.12511] extracting tables (2407.12511.pdf)...
+  found 4 tables across all pages
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+[2407.12511] scanning prose and figure captions...
+
+[2407.12511] extraction summary:
+  tables scanned:          4
+  results tables accepted: 0
+  keyword-only rejects:    3  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2407.12511] no results found — skipping
+
+[2407.21783] fetching paper title from arXiv...
+  title: The Llama 3 Herd of Models
+[2407.21783] downloading PDF...
+[2407.21783] detecting eval framework...
+  detected eval framework: bigbench
+[2407.21783] extracting tables (2407.21783.pdf)...
+  found 34 tables across all pages
+  page 1: results table accepted (17 rows, 126 data points, confidence=high)  [developer-inference] could not identify developer for 'General' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Code' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Math' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Reasoning' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Tool use' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Long context' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Multilingual' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GRE Quant.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GRE Verbal' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MMLU' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GSM8K' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ARC-c' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HellaSwag' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Winogrande' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MMLU 5-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ARC-C 25-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GSM8K 5-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'AGIEval 3-5-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'DROP 3-shot, F' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'BBH 3-shot, CoT' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Winogrande 5-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HellaSwag 10-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MATH 4-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ARC-e 0-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'PIQA 0-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'SIQA 0-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Boolq 0-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'TriviaQA 5-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'NQ 5-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HumanEval pass@' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MBPP 3-shot' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Average (8)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Average (all)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '2B 9B 27B.PT IT' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '2B 9B 27B.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'PT IT' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'RealToxicity avg tox' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'BBQ Ambig 4-shot, top-1 58.97 86.06 83.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Winogender top-1 50.14 57.64 52.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Toxigen avg tox' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (19 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (8 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: results table accepted (10 rows, 15 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (22 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (25 rows, 14 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (11 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (12 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+[2407.21783] scanning prose and figure captions...
+
+[2407.21783] extraction summary:
+  tables scanned:          34
+  results tables accepted: 3
+  keyword-only rejects:    21  (potential false negatives — review manually)
+  table data points:       155
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       155
+  unique models:           18
+  unique benchmarks:       20
+  source:                  table
+[2407.21783] converted 18 model records
+  [developer-inference] 9 model(s) have developer='unknown' — verify these before submission:
+    unknown/General
+    unknown/Code
+    unknown/Math
+    unknown/Reasoning
+    unknown/Tool use
+    unknown/Long context
+    unknown/Multilingual
+    unknown/GRE Quant.
+    unknown/GRE Verbal
+[2407.21783] written 18 files to data/papers_2407.21783/
+[2407.21783] schema validation: 18 passed, 0 failed — all passed
+
+[2408.00118] fetching paper title from arXiv...
+  title: Gemma 2: Improving Open Language Models at a Practical Size
+[2408.00118] downloading PDF...
+  downloading https://arxiv.org/pdf/2408.00118.pdf ...
+  saved to scripts/scrapers/raw/papers/2408.00118.pdf
+[2408.00118] detecting eval framework...
+  detected eval framework: bigbench
+[2408.00118] extracting tables (2408.00118.pdf)...
+  found 25 tables across all pages
+  page 1: table has benchmark keywords but failed density check (15 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (6 rows, 10 data points, confidence=high)
+  page 1: results table accepted (20 rows, 55 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (26 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: results table accepted (3 rows, 8 data points, confidence=high)
+  page 1: results table accepted (10 rows, 4 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+[2408.00118] scanning prose and figure captions...
+
+[2408.00118] extraction summary:
+  tables scanned:          25
+  results tables accepted: 4
+  keyword-only rejects:    14  (potential false negatives — review manually)
+  table data points:       77
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       77
+  unique models:           31
+  unique benchmarks:       8
+  source:                  table
+[2408.00118] converted 31 model records
+  [developer-inference] 31 model(s) have developer='unknown' — verify these before submission:
+    unknown/MMLU
+    unknown/GSM8K
+    unknown/ARC-c
+    unknown/HellaSwag
+    unknown/Winogrande
+    unknown/MMLU 5-shot
+    unknown/ARC-C 25-shot
+    unknown/GSM8K 5-shot
+    unknown/AGIEval 3-5-shot
+    unknown/DROP 3-shot, F
+    unknown/BBH 3-shot, CoT
+    unknown/Winogrande 5-shot
+    unknown/HellaSwag 10-shot
+    unknown/MATH 4-shot
+    unknown/ARC-e 0-shot
+    unknown/PIQA 0-shot
+    unknown/SIQA 0-shot
+    unknown/Boolq 0-shot
+    unknown/TriviaQA 5-shot
+    unknown/NQ 5-shot
+    unknown/HumanEval pass@
+    unknown/MBPP 3-shot
+    unknown/Average (8)
+    unknown/Average (all)
+    unknown/2B 9B 27B.PT IT
+    unknown/2B 9B 27B.
+    unknown/PT IT
+    unknown/RealToxicity avg tox
+    unknown/BBQ Ambig 4-shot, top-1 58.97 86.06 83.
+    unknown/Winogender top-1 50.14 57.64 52.
+    unknown/Toxigen avg tox
+[2408.00118] written 31 files to data/papers_2408.00118/
+[2408.00118] schema validation: 31 passed, 0 failed — all passed
+
+[2411.14599] fetching paper title from arXiv...
+  title: Limits of the Lindblad and non-Hermitian description of open systems
+[2411.14599] downloading PDF...
+  downloading https://arxiv.org/pdf/2411.14599.pdf ...
+  saved to scripts/scrapers/raw/papers/2411.14599.pdf
+[2411.14599] detecting eval framework...
+[2411.14599] extracting tables (2411.14599.pdf)...
+  found 0 tables across all pages
+[2411.14599] scanning prose and figure captions...
+
+[2411.14599] extraction summary:
+  tables scanned:          0
+  results tables accepted: 0
+  keyword-only rejects:    0  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2411.14599] no results found — skipping
+
+[2411.15138] fetching paper title from arXiv...
+  title: Material Anything: Generating Materials for Any 3D Object via Diffusion
+[2411.15138] downloading PDF...
+  downloading https://arxiv.org/pdf/2411.15138.pdf ...
+  saved to scripts/scrapers/raw/papers/2411.15138.pdf
+[2411.15138] detecting eval framework...
+[2411.15138] extracting tables (2411.15138.pdf)...
+  found 3 tables across all pages
+[2411.15138] scanning prose and figure captions...
+
+[2411.15138] extraction summary:
+  tables scanned:          3
+  results tables accepted: 0
+  keyword-only rejects:    0  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2411.15138] no results found — skipping
+
+[2412.19437] fetching paper title from arXiv...
+  title: DeepSeek-V3 Technical Report
+[2412.19437] downloading PDF...
+[2412.19437] detecting eval framework...
+  detected eval framework: bigbench
+[2412.19437] extracting tables (2412.19437.pdf)...  [developer-inference] could not identify developer for 'Aux-Loss-Based Aux-Loss-Free' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Small MoE Small MoE' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Large MoE Large MoE Aux-Loss-Based Aux-Loss-Free' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MMLU (EM)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MMLU-Redux (EM)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MMLU-Pro (EM)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'DROP (3-shot F1)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'IF-Eval (Prompt Strict)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GPQA-Diamond (Pass@1)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'SimpleQA (Correct)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'FRAMES (Acc.)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'LongBench v2 (Acc.)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HumanEval-Mul (Pass@1)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'LiveCodeBench (Pass@1-COT)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'LiveCodeBench (Pass@1)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Codeforces (Percentile)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'SWE Verified (Resolved)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Aider-Edit (Acc.)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Aider-Polyglot (Acc.)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'AIME 2024 (Pass@1)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MATH-500 (EM)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'CNMO 2024 (Pass@1)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'CLUEWSC (EM)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'C-Eval (EM)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'C-SimpleQA (Correct)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'R' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Human Participants' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'ARC' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenBookQA' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for '60.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'PIQA' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'CommonsenseQA' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Winogrande' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MMLU-Pro (held-out)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Natural Questions (held-out) 8.7 6.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'TriviaQA (held-out)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GSM8K (5-shot) 31.1 7.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MATH (4-shot) 11.6 3.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HumanEval 22.6 18.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MT-Bench 6.13 5.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenRewrite-Eval 44.9 39.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'BBH (3-shot) 32.2 27.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MMLU-Pro 19.3 12.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HellaSwag' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GSM8K (5-shot) 48.8 37.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MATH (4-shot)' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HumanEval 28.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HellaSwag 66.17 65.29 66.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'OpenBookQA 42.00 42.40 41.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'WinoGrande 58.88 58.33 58.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'GSM8K 4.32 4.62 10.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MATH 2.1 2.78 4.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'HumanEval 10.97 9.15 17.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Multiple-E Java 5.70 10.12 14.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Multiple-E JS 9.94 12.42 18.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'CoQA 33.43 33.98 38.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'DROP 13.69 11.36 17.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'Jeopardy 23.1 22.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'SQuAD v2 55.97 57.45 57.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'UltraChat 27.26 4.66 30.40 9.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MagPie-Ultra 35.49 5.22 24.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MagPie-Ultra+' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MagPie-Ultra+ + MathInstruct' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+  [developer-inference] could not identify developer for 'MagPie-Ultra+ + MetaMathQA 44.98 5.' — recorded as 'unknown'. Add a mapping to _DEVELOPER_MAP or use HuggingFace 'org/model' format.
+
+  found 12 tables across all pages
+  page 1: results table accepted (32 rows, 0 data points, confidence=medium)
+  page 1: results table accepted (20 rows, 0 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: results table accepted (36 rows, 8 data points, confidence=medium)
+  page 1: results table accepted (14 rows, 18 data points, confidence=high)
+  page 1: results table accepted (14 rows, 23 data points, confidence=medium)
+  page 1: results table accepted (26 rows, 24 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (3 rows) — skipped
+[2412.19437] scanning prose and figure captions...
+
+[2412.19437] extraction summary:
+  tables scanned:          12
+  results tables accepted: 6
+  keyword-only rejects:    2  (potential false negatives — review manually)
+  table data points:       73
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       73
+  unique models:           29
+  unique benchmarks:       16
+  source:                  table
+[2412.19437] converted 29 model records
+  [developer-inference] 25 model(s) have developer='unknown' — verify these before submission:
+    unknown/Aux-Loss-Based Aux-Loss-Free
+    unknown/Small MoE Small MoE
+    unknown/Large MoE Large MoE Aux-Loss-Based Aux-Loss-Free
+    unknown/MMLU (EM)
+    unknown/MMLU-Redux (EM)
+    unknown/MMLU-Pro (EM)
+    unknown/DROP (3-shot F1)
+    unknown/IF-Eval (Prompt Strict)
+    unknown/GPQA-Diamond (Pass@1)
+    unknown/SimpleQA (Correct)
+    unknown/FRAMES (Acc.)
+    unknown/LongBench v2 (Acc.)
+    unknown/HumanEval-Mul (Pass@1)
+    unknown/LiveCodeBench (Pass@1-COT)
+    unknown/LiveCodeBench (Pass@1)
+    unknown/Codeforces (Percentile)
+    unknown/SWE Verified (Resolved)
+    unknown/Aider-Edit (Acc.)
+    unknown/Aider-Polyglot (Acc.)
+    unknown/AIME 2024 (Pass@1)
+    unknown/MATH-500 (EM)
+    unknown/CNMO 2024 (Pass@1)
+    unknown/CLUEWSC (EM)
+    unknown/C-Eval (EM)
+    unknown/C-SimpleQA (Correct)
+[2412.19437] written 29 files to data/papers_2412.19437/
+[2412.19437] schema validation: 29 passed, 0 failed — all passed
+
+[2501.12948] fetching paper title from arXiv...
+  title: DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
+[2501.12948] downloading PDF...
+[2501.12948] detecting eval framework...
+  detected eval framework: helm
+[2501.12948] extracting tables (2501.12948.pdf)...
+  found 16 tables across all pages
+  page 1: results table accepted (22 rows, 4 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (2 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (7 rows) — skipped
+  page 1: results table accepted (25 rows, 23 data points, confidence=low)
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: results table accepted (22 rows, 0 data points, confidence=medium)
+  page 1: results table accepted (6 rows, 5 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+[2501.12948] scanning prose and figure captions...
+
+[2501.12948] extraction summary:
+  tables scanned:          16
+  results tables accepted: 4
+  keyword-only rejects:    9  (potential false negatives — review manually)
+  table data points:       32
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       32
+  unique models:           8
+  unique benchmarks:       24
+  source:                  table
+[2501.12948] converted 8 model records
+  [developer-inference] 2 model(s) have developer='unknown' — verify these before submission:
+    unknown/R
+    unknown/Human Participants
+[2501.12948] written 8 files to data/papers_2501.12948/
+[2501.12948] schema validation: 8 passed, 0 failed — all passed
+
+[2501.15451] fetching paper title from arXiv...
+  title: STATE ToxiCN: A Benchmark for Span-level Target-Aware Toxicity Extraction in Chinese Hate Speech Detection
+[2501.15451] downloading PDF...
+  downloading https://arxiv.org/pdf/2501.15451.pdf ...
+  saved to scripts/scrapers/raw/papers/2501.15451.pdf
+[2501.15451] detecting eval framework...
+[2501.15451] extracting tables (2501.15451.pdf)...
+  found 9 tables across all pages
+  page 1: table has benchmark keywords but failed density check (13 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (9 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (15 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (4 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (6 rows) — skipped
+[2501.15451] scanning prose and figure captions...
+
+[2501.15451] extraction summary:
+  tables scanned:          9
+  results tables accepted: 0
+  keyword-only rejects:    5  (potential false negatives — review manually)
+  table data points:       0
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       0
+  unique models:           0
+  unique benchmarks:       0
+  source:                  none
+[2501.15451] no results found — skipping
+
+[2502.02737] fetching paper title from arXiv...
+  title: SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model
+[2502.02737] downloading PDF...
+  downloading https://arxiv.org/pdf/2502.02737.pdf ...
+  saved to scripts/scrapers/raw/papers/2502.02737.pdf
+[2502.02737] detecting eval framework...
+  detected eval framework: helm
+[2502.02737] extracting tables (2502.02737.pdf)...
+  found 11 tables across all pages
+  page 1: results table accepted (7 rows, 3 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (5 rows) — skipped
+  page 1: results table accepted (5 rows, 2 data points, confidence=high)
+  page 1: results table accepted (13 rows, 11 data points, confidence=medium)
+  page 1: results table accepted (12 rows, 10 data points, confidence=medium)
+  page 1: table has benchmark keywords but failed density check (10 rows) — skipped
+  page 1: table has benchmark keywords but failed density check (16 rows) — skipped
+  page 1: results table accepted (16 rows, 13 data points, confidence=high)
+  page 1: table has benchmark keywords but failed density check (18 rows) — skipped
+  page 1: results table accepted (15 rows, 7 data points, confidence=low)
+[2502.02737] scanning prose and figure captions...
+
+[2502.02737] extraction summary:
+  tables scanned:          11
+  results tables accepted: 6
+  keyword-only rejects:    4  (potential false negatives — review manually)
+  table data points:       46
+  prose data points (new): 0
+  llm data points (new):   0
+  total data points:       46
+  unique models:           38
+  unique benchmarks:       12
+  source:                  table
+[2502.02737] converted 38 model records
+  [developer-inference] 37 model(s) have developer='unknown' — verify these before submission:
+    unknown/ARC
+    unknown/OpenBookQA
+    unknown/60.
+    unknown/PIQA
+    unknown/CommonsenseQA
+    unknown/Winogrande
+    unknown/MMLU-Pro (held-out)
+    unknown/Natural Questions (held-out) 8.7 6.
+    unknown/TriviaQA (held-out)
+    unknown/GSM8K (5-shot) 31.1 7.
+    unknown/MATH (4-shot) 11.6 3.
+    unknown/HumanEval 22.6 18.
+    unknown/MT-Bench 6.13 5.
+    unknown/OpenRewrite-Eval 44.9 39.
+    unknown/BBH (3-shot) 32.2 27.
+    unknown/MMLU-Pro 19.3 12.
+    unknown/HellaSwag
+    unknown/GSM8K (5-shot) 48.8 37.
+    unknown/MATH (4-shot)
+    unknown/HumanEval 28.
+    unknown/HellaSwag 66.17 65.29 66.
+    unknown/OpenBookQA 42.00 42.40 41.
+    unknown/WinoGrande 58.88 58.33 58.
+    unknown/GSM8K 4.32 4.62 10.
+    unknown/MATH 2.1 2.78 4.
+    unknown/HumanEval 10.97 9.15 17.
+    unknown/Multiple-E Java 5.70 10.12 14.
+    unknown/Multiple-E JS 9.94 12.42 18.
+    unknown/CoQA 33.43 33.98 38.
+    unknown/DROP 13.69 11.36 17.
+    unknown/Jeopardy 23.1 22.
+    unknown/SQuAD v2 55.97 57.45 57.
+    unknown/UltraChat 27.26 4.66 30.40 9.
+    unknown/MagPie-Ultra 35.49 5.22 24.
+    unknown/MagPie-Ultra+
+    unknown/MagPie-Ultra+ + MathInstruct
+    unknown/MagPie-Ultra+ + MetaMathQA 44.98 5.
+[2502.02737] written 38 files to data/papers_2502.02737/
+[2502.02737] schema validation: 38 passed, 0 failed — all passed
+
+coverage report written to scripts/scrapers/raw/coverage_report_1773261055.json
+
+total files written: 413

@@ -1,0 +1,81 @@
+# Every Eval Ever — .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Test / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data directory — large; not committed to git
+# (upload to Hugging Face Hub instead)
+data/
+
+# Raw scraper output (large JSON dumps)
+scripts/scrapers/raw/
+
+# Generated results / figures
+results/
+
+# PDF compilation artefacts
+submission/*.aux
+submission/*.log
+submission/*.out
+submission/*.toc
+submission/*.synctex.gz
+submission/*.bbl
+submission/*.blg
+submission/*.fls
+submission/*.fdb_latexmk
+
+# Validation report (generated at runtime)
+VALIDATION_REPORT.json
+
+# macOS
+.DS_Store
+.localized
+.Spotlight-V100
+.Trashes
+
+# pip wheel cache
+pip-wheel-metadata/
+*.whl
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
